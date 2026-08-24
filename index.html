@@ -503,9 +503,9 @@
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Atención Psicosocial</span>
-                        <span class="badge green">Completado</span>
+                        <span class="badge green">En estabilización</span>
                     </div>
-                    <p class="module-desc">20 HU — duplas, sesiones y confidencialidad reforzada.</p>
+                    <p class="module-desc">20 HU — duplas, sesiones y confidencialidad reforzada. 2ª iteración de QA y ajustes de fondo hasta el Sprint 12</p>
                 </div>
 
                 <div class="module-item">
@@ -558,10 +558,18 @@
 
                 <div class="module-item">
                     <div class="module-header">
-                        <span class="module-title">Rutas Diferenciales</span>
+                        <span class="module-title">Rutas Diferenciales - motor y semáforo sectorial</span>
                         <span class="badge blue">En mockup</span>
                     </div>
-                    <p class="module-desc">Motor de enrutamiento — condiciona el acceso de entidades externas.</p>
+                    <p class="module-desc">Motor de enrutamiento — condiciona el acceso de entidades externas. Semáforo por sector — la única pieza de Rutas que sigue en diseño.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Portal de usuario de entidad</span>
+                        <span class="badge brown">En desarrollo</span>
+                    </div>
+                    <p class="module-desc">Directorio, detalle de caso, tareas y rutas asignadas — pantallas reales desde el Sprint 8.</p>
                 </div>
             </div>
 
@@ -577,9 +585,9 @@
                 <p class="module-desc" style="margin-bottom: 1.5rem;">Migración carga masiva desde varias fuentes hacia producción, hoy en cierre de bugs.</p>
                 
                 <div class="tags-container">
-                    <span class="tag">RBAC · mínimo privilegio</span>
-                    <span class="tag">MSPI</span>
-                    <span class="tag">HTTPS / SSL</span>
+                    <span class="tag">RBAC · roles mínimo privilegio</span>
+                    <span class="tag">MSPI · estándares de seguridad</span>
+                    <span class="tag">HTTPS / SSL (AWS)</span>
                     <span class="tag">Timeline forense inmutable</span>
                 </div>
 
@@ -707,7 +715,7 @@
             </div>
 
             <p class="module-desc" style="max-width: 800px; margin-top: 1rem;">
-                Las entidades operativas (ICBF y afines) entran por interfaz, con usuario y rol anclados al módulo de Rutas, hoy en mockup — sin conectividad de datos por API, por seguridad del entorno de SALVIA. El Ministerio de Salud es una vía distinta: no es usuario de Rutas, sino agente regulador y auditor que necesita acceso a la base de datos para dar fuerza al Art. 343 de la Ley 2294 de 2023 y habilitar SIVIGE. Su mecanismo técnico exacto todavía no está definido — es un compromiso a resolver junto con el Ministerio en los próximos meses, no un pendiente de esta semana.
+                Las entidades operativas (ICBF y afines) entran por interfaz, con usuario y rol anclados al portal de entidad del módulo de Rutas — con pantallas reales en desarrollo desde el Sprint 8, según la bitácora de Jira — sin conectividad de datos por API, por seguridad del entorno de SALVIA. Lo que sigue en mockup es el motor de enrutamiento diferencial y el semáforo sectorial, no el acceso de las entidades en sí. El Ministerio de Salud es una vía distinta: no es usuario de Rutas, sino agente regulador y auditor que necesita acceso a la base de datos para dar fuerza al Art. 343 de la Ley 2294 de 2023 y habilitar SIVIGE. Su mecanismo técnico exacto todavía no está definido — es un compromiso a resolver junto con el Ministerio en los próximos meses, no un pendiente de esta semana.
             </p>
         </div>
     </section>
@@ -740,6 +748,7 @@
                 <div class="rm-date">a 26 de octubre de 2026</div>
                 <div class="rm-task">Integrar el desarrollo web y la bitácora de caso de la App MASP.</div>
                 <div class="rm-task">Verificar el registro de MASP en App Store Connect (iOS).</div>
+                <div class="rm-task">Completar la estabilización de Atención Psicosocial (2ª iteración de QA en curso).</div>
                 <div class="rm-task">
                     Cerrar LGBTIQ+, Masculinidades y Estabilización.
                     <span class="rm-task-meta">187 h + 147 h + 250 h</span>
@@ -772,7 +781,7 @@
     <!-- 05_Salvia -->
     <footer class="footer">
         <h2>El sistema ya protege — el cierre del proyecto está en formalizar cómo el Estado entra a mirarlo.</h2>
-        <p>Basado en el Informe Técnico Ejecutivo v3 · 10 documentos oficiales del proyecto + comunicación directa del equipo, 24-ago-2026.</p>
+        <p>Basado en el Informe Técnico Ejecutivo v4 · 10 documentos oficiales del proyecto + comunicación directa del equipo + Sprints 5-12 y bitácora de horas (salvia_julio.xlsx), 24-ago-2026.</p>
     </footer>
 
 </div>
