@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosistema SALVIA - Panorama Consolidado</title>
+    <!-- Fuentes de Google para replicar la tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f6f5f0;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --white: #ffffff;
+            
+            /* Colores de estado (Badges) */
+            --status-green-bg: #dcfce7;
+            --status-green-text: #166534;
+            --status-brown-bg: #fef08a;
+            --status-brown-text: #854d0e;
+            --status-blue-bg: #e0e7ff;
+            --status-blue-text: #1e40af;
+            --status-red-bg: #fee2e2;
+            --status-red-text: #991b1b;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #111827;
+        }
+
+        /* --- 01. ENCABEZADO --- */
+        .overline {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #374151;
+            text-transform: uppercase;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            margin: 0.5rem 0 1rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .legend-item.green::before { background-color: var(--status-green-text); }
+        .legend-item.brown::before { background-color: var(--status-brown-text); }
+        .legend-item.blue::before { background-color: var(--status-blue-text); }
+        .legend-item.red::before { background-color: var(--status-red-text); }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--text-main);
+        }
+
+        .card.card-highlight { border-top-color: #991b1b; }
+
+        .card-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card-value {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        
+        .card-highlight .card-value { color: #991b1b; }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 3rem 0;
+        }
+
+        /* --- 02. EL SISTEMA EN TRES CAPAS --- */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+        }
+
+        .three-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .column-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .col-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .module-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .module-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+        .badge.green { background: var(--status-green-bg); color: var(--status-green-text); }
+        .badge.brown { background: var(--status-brown-bg); color: var(--status-brown-text); }
+        .badge.blue { background: var(--status-blue-bg); color: var(--status-blue-text); }
+        .badge.red { background: var(--status-red-bg); color: var(--status-red-text); }
+        
+        .badge::before {
+            content: '•';
+            margin-right: 4px;
+        }
+
+        .module-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Arquitectura y Avance */
+        .arch-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: #f3f4f6;
+            color: #374151;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .progress-block {
+            margin-bottom: 1rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .progress-bar-bg {
+            background: #e5e7eb;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            background: #1f2937;
+            height: 100%;
+            width: 0%; /* Inicial para animación JS */
+            transition: width 1s ease-in-out;
+        }
+
+        /* --- 03. DOS VÍAS DE ACCESO (DIAGRAMA CSS) --- */
+        .diagram-container {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+        }
+
+        .css-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .diagram-box {
+            border: 1px solid #94a3b8;
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+            background: var(--white);
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .diagram-box.blue-bg { background: #f1f5f9; border-color: #64748b; }
+        .diagram-box.red-dashed { border: 1px dashed #ef4444; background: #fef2f2; }
+        
+        .diagram-box strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
+        .diagram-box span { font-size: 0.75rem; color: var(--text-muted); }
+
+        .diagram-arrow {
+            flex: 0 0 40px;
+            height: 2px;
+            background: #64748b;
+            position: relative;
+        }
+        .diagram-arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 8px solid #64748b;
+        }
+        
+        .diagram-arrow.dashed { background: transparent; border-top: 2px dashed #ef4444; }
+        .diagram-arrow.dashed::after { border-left-color: #ef4444; top: -5px; }
+
+        .system-boundary {
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            flex: 1.5;
+            min-width: 250px;
+            position: relative;
+        }
+        
+        .system-boundary::before {
+            content: 'LÍMITE DEL SISTEMA SALVIA';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            padding: 0 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 0.05em;
+        }
+
+        /* --- 04. HOJA DE RUTA --- */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .roadmap-card {
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .rm-red { background: #fdf2f2; border-top: 4px solid #b91c1c; }
+        .rm-yellow { background: #fefce8; border-top: 4px solid #a16207; }
+        .rm-blue { background: #f0fdfa; border-top: 4px solid #1d4ed8; }
+
+        .rm-header {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.2rem;
+        }
+        
+        .rm-red .rm-header { color: #b91c1c; }
+        .rm-yellow .rm-header { color: #a16207; }
+        .rm-blue .rm-header { color: #1d4ed8; }
+
+        .rm-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .rm-task {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .rm-task::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .rm-task-meta {
+            display: block;
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+
+        /* --- 05. FOOTER --- */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .css-diagram { flex-direction: column; align-items: stretch; }
+            .diagram-arrow { display: none; }
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_ApprovalStatus msdt:dt="string">0</mso:_ApprovalStatus>
+<mso:_ApprovalAssignedTo msdt:dt="string"></mso:_ApprovalAssignedTo>
+<mso:_ApprovalRespondedBy msdt:dt="string"></mso:_ApprovalRespondedBy>
+<mso:_ApprovalSentBy msdt:dt="string"></mso:_ApprovalSentBy>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- 01_Salvia -->
+    <header>
+        <p class="overline">ECOSISTEMA SALVIA — ETAPA 2</p>
+        <h1 class="main-title">Panorama consolidado: módulos,<br>arquitectura y hoja de ruta</h1>
+        <p class="subtitle">Un solo vistazo para cliente y equipo de desarrollo — qué ya opera, qué sigue en construcción y qué falta por resolver antes del cierre contractual. Corte al 24 de agosto de 2026.</p>
+        
+        <div class="legend">
+            <span class="legend-item green">Completado / operativo</span>
+            <span class="legend-item brown">En desarrollo</span>
+            <span class="legend-item blue">En mockup / diseño</span>
+            <span class="legend-item red">Pendiente crítico / sin definir</span>
+        </div>
+
+        <div class="summary-grid">
+            <div class="card">
+                <div class="card-label">AVANCE FÍSICO</div>
+                <div class="card-value">60,79%</div>
+                <div class="card-desc">a jul-2026 · Bolsa 1: 73,8% · Bolsa 2: 31,4%</div>
+            </div>
+            <div class="card">
+                <div class="card-label">PLAZO RESTANTE</div>
+                <div class="card-value">~9 sem.</div>
+                <div class="card-desc">cierre contractual 26-oct-2026</div>
+            </div>
+            <div class="card">
+                <div class="card-label">BOLSA DE HORAS</div>
+                <div class="card-value">5.396 h</div>
+                <div class="card-desc">3.744 h Bolsa 1 + 1.652 h Bolsa 2</div>
+            </div>
+            <div class="card card-highlight">
+                <div class="card-label">HITO DE ESTA SEMANA</div>
+                <div class="card-value">Migración de datos</div>
+                <div class="card-desc">cierre de bugs caso–agente</div>
+            </div>
+        </div>
+    </header>
+
+    <hr>
+
+    <!-- 02_Salvia -->
+    <section>
+        <div class="section-header">
+            <h2 style="margin:0; font-size: 1.8rem;">El sistema, en tres capas</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">módulos · arquitectura y datos · entidades externas</span>
+        </div>
+
+        <div class="three-columns">
+            <!-- Columna 1: Módulos -->
+            <div class="column-card">
+                <div class="col-header">
+                    <span>Módulos del ecosistema</span>
+                    <span style="color:var(--text-muted); font-size: 0.9rem;">11</span>
+                </div>
+                
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Registro</span>
+                        <span class="badge green">Operativo</span>
+                    </div>
+                    <p class="module-desc">Base del sistema, en producción desde la Etapa 1.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Seguimiento</span>
+                        <span class="badge green">Completado</span>
+                    </div>
+                    <p class="module-desc">Núcleo operativo — 32 HU verificadas en código.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Barreras y Tareas</span>
+                        <span class="badge green">Completado</span>
+                    </div>
+                    <p class="module-desc">27 HU — flujo de oficios y escalamiento institucional.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Atención Psicosocial</span>
+                        <span class="badge green">Completado</span>
+                    </div>
+                    <p class="module-desc">20 HU — duplas, sesiones y confidencialidad reforzada.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Tamizaje de Feminicidio</span>
+                        <span class="badge brown">Ajuste final</span>
+                    </div>
+                    <p class="module-desc">Fórmulas y formularios de riesgo bajo estructura EAV.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Medidas de Emergencia</span>
+                        <span class="badge brown">En proceso</span>
+                    </div>
+                    <p class="module-desc">Caracterización, otorgamiento y alertas de prórroga.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">App MASP</span>
+                        <span class="badge brown">Núcleo en producción</span>
+                    </div>
+                    <p class="module-desc">Pánico, reporte y Línea 155 ya en Play Store. Falta integración web y bitácora de caso.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">LGBTIQ+</span>
+                        <span class="badge brown">En desarrollo</span>
+                    </div>
+                    <p class="module-desc">Registro especializado y variables diferenciales.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Masculinidades</span>
+                        <span class="badge brown">En desarrollo</span>
+                    </div>
+                    <p class="module-desc">Alcance contractual por confirmar con el Ministerio.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Estabilización</span>
+                        <span class="badge brown">En desarrollo</span>
+                    </div>
+                    <p class="module-desc">Gestión de remisiones y trazabilidad de beneficios.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Rutas Diferenciales</span>
+                        <span class="badge blue">En mockup</span>
+                    </div>
+                    <p class="module-desc">Motor de enrutamiento — condiciona el acceso de entidades externas.</p>
+                </div>
+            </div>
+
+            <!-- Columna 2: Arquitectura y datos -->
+            <div class="column-card">
+                <div class="col-header">
+                    <span>Arquitectura, datos y avance</span>
+                </div>
+                
+                <!-- Imagen solicitada -->
+                <img src="02_2_Salvia.png" alt="Diagrama de Arquitectura Salvia" class="arch-image">
+                
+                <p class="module-desc" style="margin-bottom: 1.5rem;">De múltiples fuentes a un único caso trazable: la migración reemplazó a Zenkit por una carga directa a producción, hoy en cierre de bugs.</p>
+                
+                <div class="tags-container">
+                    <span class="tag">RBAC · mínimo privilegio</span>
+                    <span class="tag">MSPI</span>
+                    <span class="tag">HTTPS / SSL</span>
+                    <span class="tag">Timeline forense inmutable</span>
+                </div>
+
+                <div class="progress-block">
+                    <div class="progress-header">
+                        <span>Bolsa 1 — Prevención (núcleo)</span>
+                        <span>73,8%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" data-width="73.8"></div>
+                    </div>
+                </div>
+
+                <div class="progress-block">
+                    <div class="progress-header">
+                        <span>Bolsa 2 — Mujeres ASP / MASP</span>
+                        <span>31,4%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" data-width="31.4"></div>
+                    </div>
+                </div>
+
+                <div class="progress-block" style="margin-top: 1.5rem;">
+                    <div class="progress-header" style="font-size: 1rem;">
+                        <span>Global</span>
+                        <span>60,8%</span>
+                    </div>
+                    <div class="progress-bar-bg" style="height: 10px;">
+                        <div class="progress-bar-fill" data-width="60.8" style="background:#1d4ed8;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna 3: Entidades -->
+            <div class="column-card">
+                <div class="col-header">
+                    <span>Entidades y canales de acceso</span>
+                    <span style="color:var(--text-muted); font-size: 0.9rem;">5</span>
+                </div>
+
+                <div class="module-item">
+                    <span class="module-title">Línea 155</span>
+                    <p class="module-desc" style="margin-top:0.25rem;">Canal primario de ingreso de casos. <span class="badge green">Operativo</span></p>
+                </div>
+
+                <div class="module-item">
+                    <span class="module-title">Mecanismo Articulador</span>
+                    <p class="module-desc" style="margin-top:0.25rem;">Municipal → Departamental/Distrital → Nacional.</p>
+                    <div style="margin-top: 0.3rem;">
+                        <span class="badge green">Definido</span>
+                        <span style="font-family: monospace; font-size: 0.7rem; color: #9ca3af; margin-left: 0.5rem;">Decreto 1710 de 2020</span>
+                    </div>
+                </div>
+
+                <div class="module-item">
+                    <span class="module-title">ICBF</span>
+                    <p class="module-desc" style="margin-top:0.25rem;">Usuario/rol como entidad-actor. <span class="badge blue">Vía Rutas · mockup</span></p>
+                </div>
+
+                <div class="module-item">
+                    <span class="module-title">Fiscalía · Comisaría de Familia · Medicina Legal · Defensoría</span>
+                    <p class="module-desc" style="margin-top:0.25rem;">Usuarios/rol como entidades-actor.</p>
+                    <div style="margin-top: 0.3rem;"><span class="badge blue">Vía Rutas · mockup</span></div>
+                </div>
+
+                <div class="module-item" style="margin-top: 2rem;">
+                    <span class="module-title">Ministerio de Salud (SIVIGE)</span>
+                    <p class="module-desc" style="margin-top:0.25rem;">Acceso <strong>regulador y auditor</strong> a la base de datos, no usuario de Rutas. <span class="badge red">Sin definir</span></p>
+                    <p style="font-family: monospace; font-size: 0.7rem; color: #9ca3af; margin-top: 0.3rem;">Art. 343, Ley 2294 de 2023 · próximos meses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 03_Salvia -->
+    <section>
+        <div class="section-header">
+            <h2 style="margin:0; font-size: 1.5rem;">Dos vías de acceso externo — no una</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">el punto que hay que formalizar con el Ministerio</span>
+        </div>
+
+        <div class="diagram-container">
+            <!-- Fila 1 del diagrama -->
+            <div class="css-diagram">
+                <div class="diagram-box">
+                    <strong>Entidades operativas</strong>
+                    <span>ICBF · Fiscalía · Comisaría<br>Medicina Legal · Defensoría</span>
+                </div>
+                <div class="diagram-arrow"></div>
+                <div class="diagram-box blue-bg">
+                    <strong>Usuario / rol</strong>
+                    <span>sin conectividad de datos</span>
+                </div>
+                <div class="diagram-arrow" style="background:#ef4444;">
+                    <span style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.7rem; color:#ef4444;">sin API</span>
+                </div>
+                <div class="system-boundary">
+                    <div class="diagram-box" style="margin-bottom: 2rem;">
+                        <strong>Módulo de Rutas</strong>
+                        <span>interfaz de usuario externo · en mockup</span>
+                    </div>
+                    <div class="diagram-box">
+                        <strong>Base de datos</strong>
+                        <span>acceso directo · próximos meses</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fila 2 (Simulada con flex absolute o visual placement) -->
+            <div class="css-diagram" style="margin-top: -6rem; padding-right: 300px;">
+                <div class="diagram-box red-dashed">
+                    <strong>Ministerio de Salud</strong>
+                    <span>rol: regulador y auditor<br>(interoperación con SIVIGE)</span>
+                </div>
+                <div class="diagram-arrow dashed"></div>
+                <div class="diagram-box red-dashed" style="background:#fee2e2;">
+                    <strong>Acceso regulador</strong>
+                    <span>mecanismo por definir</span>
+                </div>
+                <div class="diagram-arrow dashed"></div>
+                <div style="flex: 1.5; min-width: 250px;"></div> <!-- Spacer -->
+            </div>
+
+            <p class="module-desc" style="max-width: 800px; margin-top: 1rem;">
+                Las entidades operativas (ICBF y afines) entran por interfaz, con usuario y rol anclados al módulo de Rutas, hoy en mockup — sin conectividad de datos por API, por seguridad del entorno de SALVIA. El Ministerio de Salud es una vía distinta: no es usuario de Rutas, sino agente regulador y auditor que necesita acceso a la base de datos para dar fuerza al Art. 343 de la Ley 2294 de 2023 y habilitar SIVIGE. Su mecanismo técnico exacto todavía no está definido — es un compromiso a resolver junto con el Ministerio en los próximos meses, no un pendiente de esta semana.
+            </p>
+        </div>
+    </section>
+
+    <!-- 04_Salvia -->
+    <section>
+        <div class="section-header">
+            <h2 style="margin:0; font-size: 1.5rem;">Hoja de ruta: lo que falta por ejecutar</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">tres horizontes, no un solo backlog</span>
+        </div>
+
+        <div class="roadmap-grid">
+            <div class="roadmap-card rm-red">
+                <div class="rm-header">ESTA SEMANA</div>
+                <div class="rm-date">24–30 de agosto de 2026</div>
+                
+                <div class="rm-task">
+                    Cerrar los bugs de migración en la asociación de casos con agentes.
+                    <span class="rm-task-meta">hito reportado por el equipo</span>
+                </div>
+            </div>
+
+            <div class="roadmap-card rm-yellow">
+                <div class="rm-header">ANTES DEL CIERRE CONTRACTUAL</div>
+                <div class="rm-date">a 26 de octubre de 2026</div>
+                
+                <div class="rm-task">
+                    Sacar Rutas Diferenciales de mockup a desarrollo.
+                    <span class="rm-task-meta">207 h · Bolsa 2</span>
+                </div>
+                <div class="rm-task">Formalizar el modelo de acceso de ICBF y demás entidades operativas.</div>
+                <div class="rm-task">Integrar el desarrollo web y la bitácora de caso de la App MASP.</div>
+                <div class="rm-task">Verificar el registro de MASP en App Store Connect (iOS).</div>
+                <div class="rm-task">
+                    Cerrar LGBTIQ+, Masculinidades y Estabilización.
+                    <span class="rm-task-meta">187 h + 147 h + 250 h</span>
+                </div>
+                <div class="rm-task">
+                    Cerrar Tamizaje y Medidas de Emergencia.
+                    <span class="rm-task-meta">35 h + ~154 h</span>
+                </div>
+                <div class="rm-task">Accesibilidad JAWS en el módulo de Seguimiento.</div>
+                <div class="rm-task">Tableros de Control / BI.</div>
+                <div class="rm-task">
+                    Documentación técnica desde GitHub, en paralelo.
+                    <span class="rm-task-meta">no bloqueante</span>
+                </div>
+                <div class="rm-task">Fase 4: QA, capacitación masiva, mesa de ayuda 24/7, derechos de autor.</div>
+            </div>
+
+            <div class="roadmap-card rm-blue">
+                <div class="rm-header">PRÓXIMOS MESES</div>
+                <div class="rm-date">en paralelo, junto con el Ministerio</div>
+                
+                <div class="rm-task">
+                    Habilitar el acceso regulador/auditor del Ministerio de Salud a la base de datos de SALVIA para SIVIGE.
+                    <span class="rm-task-meta">Art. 343, Ley 2294 de 2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05_Salvia -->
+    <footer class="footer">
+        <h2>El sistema ya protege — el cierre del proyecto está en formalizar cómo el Estado entra a mirarlo.</h2>
+        <p>Basado en el Informe Técnico Ejecutivo v3 · 10 documentos oficiales del proyecto + comunicación directa del equipo, 24-ago-2026.</p>
+    </footer>
+
+</div>
+
+<!-- Script para animar las barras de progreso al cargar -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+            const bars = document.querySelectorAll('.progress-bar-fill');
+            bars.forEach(bar => {
+                const targetWidth = bar.getAttribute('data-width');
+                bar.style.width = targetWidth + '%';
+            });
+        }, 300); // Pequeño retraso para que la animación sea visible
+    });
+</script>
+
+</body>
+</html>
