@@ -407,6 +407,106 @@
             .css-diagram { flex-direction: column; align-items: stretch; }
             .diagram-arrow { display: none; }
         }
+
+        /* --- 06. PLAN ORIGINAL VS. REALIDAD --- */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .compare-card {
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .compare-card.plan { background: #f8fafc; }
+        .compare-card.real { background: #fff7ed; border-color: #fdba74; }
+        .compare-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .compare-card.plan .compare-label { color: #475569; }
+        .compare-card.real .compare-label { color: #c2410c; }
+        .compare-row {
+            font-size: 0.88rem;
+            margin-bottom: 0.85rem;
+            padding-left: 0.9rem;
+            border-left: 2px solid var(--border-color);
+        }
+        .compare-card.real .compare-row { border-left-color: #f59e0b; }
+        .compare-row strong { display: block; font-size: 0.85rem; margin-bottom: 0.15rem; }
+        .gap-callout {
+            background: #111827;
+            color: #f3f4f6;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .gap-callout strong { color: #fbbf24; }
+
+        /* --- 07. HOJA DE RUTA POR HORIZONTES --- */
+        .horizon-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: currentColor;
+            color: var(--white) !important;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+        .rm-red .horizon-num { background: #b91c1c; }
+        .rm-yellow .horizon-num { background: #a16207; }
+        .rm-blue .horizon-num { background: #1d4ed8; }
+        .rm-why {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin: -0.5rem 0 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        /* --- 08. AJUSTES OPERATIVOS EN CURSO --- */
+        .ops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .ops-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.1rem 1.25rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid #1d4ed8;
+        }
+        .ops-owner {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+        .ops-title { font-weight: 600; font-size: 0.92rem; margin-bottom: 0.25rem; }
+        .ops-desc { font-size: 0.82rem; color: var(--text-muted); }
+        .ops-ticket {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: #1d4ed8;
+            background: #eff6ff;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
     </style>
 
 <!--[if gte mso 9]><xml>
@@ -424,14 +524,14 @@
     
     <!-- 01_Salvia -->
     <header>
-        <p class="overline">ECOSISTEMA SALVIA — ETAPA 2</p>
-        <h1 class="main-title">Panorama consolidado: módulos,<br>arquitectura y hoja de ruta</h1>
-        <p class="subtitle">Un solo vistazo para cliente y equipo de desarrollo — qué ya opera, qué sigue en construcción y qué falta por resolver antes del cierre contractual. Corte al 24 de agosto de 2026.</p>
-        
+        <p class="overline">ECOSISTEMA SALVIA — ETAPA 2 · INSUMO PARA DIRECCIÓN DE PROYECTO</p>
+        <h1 class="main-title">Panorama consolidado: un plan<br>realista para las 6 semanas que quedan</h1>
+        <p class="subtitle">Qué ya opera, qué sigue en construcción, y por qué el plan de trabajo original ya no describe con precisión dónde estamos. Corte al 2 de septiembre de 2026 — Sprint 13 en ejecución.</p>
+
         <div class="legend">
             <span class="legend-item green">Completado / operativo</span>
             <span class="legend-item brown">En desarrollo</span>
-            <span class="legend-item blue">En mockup / diseño</span>
+            <span class="legend-item blue">En mockup / diseño / definición</span>
             <span class="legend-item red">Pendiente crítico / sin definir</span>
         </div>
 
@@ -439,25 +539,59 @@
             <div class="card">
                 <div class="card-label">AVANCE FÍSICO</div>
                 <div class="card-value">60,79%</div>
-                <div class="card-desc">a jul-2026 · Bolsa 1: 73,8% · Bolsa 2: 31,4%</div>
+                <div class="card-desc">última medición disponible: jul-2026 · Bolsa 1: 73,8% · Bolsa 2: 31,4%</div>
             </div>
-            <div class="card">
+            <div class="card card-highlight">
                 <div class="card-label">PLAZO RESTANTE</div>
-                <div class="card-value">~9 sem.</div>
-                <div class="card-desc">cierre contractual 26-oct-2026</div>
+                <div class="card-value">~6 sem.</div>
+                <div class="card-desc">2-sep a 26-oct-2026 · cierre contractual sin prórroga conocida</div>
             </div>
             <div class="card">
                 <div class="card-label">BOLSA DE HORAS</div>
                 <div class="card-value">5.396 h</div>
                 <div class="card-desc">3.744 h Bolsa 1 + 1.652 h Bolsa 2</div>
             </div>
-            <div class="card card-highlight">
-                <div class="card-label">HITO DE ESTA SEMANA</div>
-                <div class="card-value">Migración de datos</div>
-                <div class="card-desc">cierre de bugs caso–agente</div>
+            <div class="card">
+                <div class="card-label">SEMANA EN CURSO (SPRINT 13)</div>
+                <div class="card-value">Rutas + Huérfanos + Masculinidades</div>
+                <div class="card-desc">1ª QA de Rutas, campos de formulario y ajustes operativos en Psicosocial/Barreras</div>
             </div>
         </div>
     </header>
+
+    <hr>
+
+    <!-- 00_Salvia_realidad -->
+    <section>
+        <div class="section-header">
+            <h2 style="margin:0; font-size: 1.5rem;">Por qué necesitamos replanificar</h2>
+            
+        </div>
+
+        <p class="module-desc" style="max-width: 900px; margin-bottom: 1.5rem;">
+            El Plan de Trabajo del Proyecto Evolutivo SALVIA (V1, emitido el 27 de marzo de 2026) es y sigue siendo nuestra ruta contractual. Pero fue escrito con el sistema visto desde marzo, y hoy —a seis semanas del cierre— la evidencia de sprints y la definición real de alcance nos obligan a mostrarle a la Dirección un plan que sea honesto con el tiempo que queda, no uno que repita una proyección que ya no se está cumpliendo.
+        </p>
+
+        <div class="compare-grid">
+            <div class="compare-card plan">
+                <div class="compare-label">Lo que el plan original (27-mar-2026) asumía</div>
+                <div class="compare-row"><strong>Fase 3 — Expansión Diferencial y App Móvil</strong> cerrada el 26 de agosto: Módulo LGBTIQ+, Módulo Web ASP, App MASP con botón de pánico y Tableros de Control ya entregados.</div>
+                <div class="compare-row"><strong>Fase 4 — Estabilización y Transferencia</strong> del 27 de agosto al 26 de octubre dedicada solo a QA, migración, capacitaciones y cierre — sin desarrollo funcional nuevo pendiente.</div>
+                <div class="compare-row"><strong>Alcance</strong> cinco módulos de expansión (Seguimiento, Tamizaje, Medidas de Emergencia, LGBTIQ+, ASP/MASP), sin Familiares/Huérfanos ni Masculinidades como frentes de desarrollo propios.</div>
+            </div>
+            <div class="compare-card real">
+                <div class="compare-label">Lo que muestra el Sprint 13 y el estado real de los módulos</div>
+                <div class="compare-row"><strong>Rutas —</strong> el motor de enrutamiento diferencial y el semáforo sectorial estan en desarrollo; esta semana arranca su primera iteración de QA (PSWYA-637), no su cierre.</div>
+                <div class="compare-row"><strong>Medidas de Emergencia y LGBTIQ+ —</strong> siguen en desarrollo, no cerrados como asumía la Fase 3.</div>
+                <div class="compare-row"><strong>Alcance ampliado —</strong> Familiares/Huérfanos y Masculinidades entraron como frentes de desarrollo propios; esta semana se están levantando los campos de sus formularios (PSWYA-628, PSWYA-629), no construyendo pantallas.</div>
+                <div class="compare-row"><strong>Sin conciliación de agosto —</strong> la última medición de avance físico confiable sigue siendo la de julio; no tenemos aún el dato de horas ejecutadas en agosto para confirmar si el ritmo se sostuvo.</div>
+            </div>
+        </div>
+
+        <div class="gap-callout">
+            La consecuencia no es que el proyecto esté en riesgo de incumplir — es que <strong>el orden de entrega tiene que cambiar</strong>. Entrar a las seis semanas finales todavía con Rutas en pruebas, con dos módulos nuevos en definición de campos, y sin poder cerrar Fase 4 tal como fue escrito en plan de trabajo, exige priorizar lo que sostiene el resto del sistema. Esa es la lógica de la hoja de ruta que sigue.
+        </div>
+    </section>
 
     <hr>
 
@@ -473,7 +607,7 @@
             <div class="column-card">
                 <div class="col-header">
                     <span>Módulos del ecosistema</span>
-                    <span style="color:var(--text-muted); font-size: 0.9rem;">11</span>
+                    <span style="color:var(--text-muted); font-size: 0.9rem;">13</span>
                 </div>
                 
                 <div class="module-item">
@@ -543,9 +677,17 @@
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Masculinidades</span>
-                        <span class="badge brown">En desarrollo</span>
+                        <span class="badge blue">En definición de campos</span>
                     </div>
-                    <p class="module-desc">Alcance contractual por confirmar con el Ministerio.</p>
+                    <p class="module-desc">Formulario de reporte y registro en levantamiento esta semana (Sprint 13). Alcance contractual por confirmar con el Ministerio.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">
+                        <span class="module-title">Familiares y Registro Nacional de Huérfanos</span>
+                        <span class="badge blue">En definición de campos</span>
+                    </div>
+                    <p class="module-desc">Formulario de reporte y registro en levantamiento esta semana (Sprint 13). Reutiliza, según diseño, el mismo aparato de Rutas, Barreras, Notificaciones y Medidas de Emergencia ya construido para víctimas directas.</p>
                 </div>
 
                 <div class="module-item">
@@ -715,7 +857,7 @@
             </div>
 
             <p class="module-desc" style="max-width: 800px; margin-top: 1rem;">
-                Las entidades operativas (ICBF y afines) entran por interfaz, con usuario y rol anclados al portal de entidad del módulo de Rutas — con pantallas reales en desarrollo desde el Sprint 8, según la bitácora de Jira — sin conectividad de datos por API, por seguridad del entorno de SALVIA. Lo que sigue en mockup es el motor de enrutamiento diferencial y el semáforo sectorial, no el acceso de las entidades en sí. El Ministerio de Salud es una vía distinta: no es usuario de Rutas, sino agente regulador y auditor que necesita acceso a la base de datos para dar fuerza al Art. 343 de la Ley 2294 de 2023 y habilitar SIVIGE. Su mecanismo técnico exacto todavía no está definido — es un compromiso a resolver junto con el Ministerio en los próximos meses, no un pendiente de esta semana.
+                Las entidades operativas acceden al módulo de Rutas a través de una interfaz, sin conectividad API por seguridad. El Ministerio de Salud, como agente regulador, necesita acceso a la base de datos, pero su mecanismo técnico aún no está definido.
             </p>
         </div>
     </section>
@@ -723,65 +865,132 @@
     <!-- 04_Salvia -->
     <section>
         <div class="section-header">
-            <h2 style="margin:0; font-size: 1.5rem;">Hoja de ruta: lo que falta por ejecutar</h2>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">tres horizontes, no un solo backlog</span>
+            <h2 style="margin:0; font-size: 1.5rem;">Hoja de ruta realista: qué va primero y por qué</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">tres horizontes priorizados, no un backlog en paralelo</span>
         </div>
 
         <div class="roadmap-grid">
             <div class="roadmap-card rm-red">
-                <div class="rm-header">ESTA SEMANA</div>
-                <div class="rm-date">24–30 de agosto de 2026</div>
-                
+                <div class="rm-header"><span class="horizon-num">1</span>RUTAS PRIMERO</div>
+                <div class="rm-date">2–20 de septiembre, aprox.</div>
+                <div class="rm-why">Es la pieza de la que dependen las demás: sin Rutas cerrado, el portal de entidades, el escalamiento de barreras y el enrutamiento de LGBTIQ+ y de los dos módulos nuevos no tienen dónde apoyarse.</div>
+
                 <div class="rm-task">
-                    Cerrar los bugs de migración en la asociación de casos con agentes.
-                    <span class="rm-task-meta">hito reportado por el equipo</span>
-                </div>
-                <div class="rm-task">
-                    Sacar Rutas Diferenciales de mockup a desarrollo.
+                    Sacar el motor de enrutamiento diferencial y el semáforo sectorial de mockup a desarrollo real.
                     <span class="rm-task-meta">207 h · Bolsa 2</span>
                 </div>
-                <div class="rm-task">Formalizar el modelo de acceso de ICBF y demás entidades operativas.</div>
+                <div class="rm-task">
+                    Completar la primera iteración de QA de Rutas y resolver los bugs de prioridad media que salgan de ella.
+                    <span class="rm-task-meta">PSWYA-637 · en curso, Sprint 13</span>
+                </div>
+                <div class="rm-task">Cerrar y formalizar el portal de usuario de entidad para ICBF y demás entidades operativas.</div>
+                <div class="rm-task">
+                    Corregir el bug donde el botón de crear seguimiento se salta el protocolo 3x3 de contacto — afecta directamente la trazabilidad de Rutas y Seguimiento.
+                    <span class="rm-task-meta">PSWYA-624</span>
+                </div>
             </div>
 
             <div class="roadmap-card rm-yellow">
-                <div class="rm-header">ANTES DEL CIERRE CONTRACTUAL</div>
-                <div class="rm-date">a 26 de octubre de 2026</div>
-                <div class="rm-task">Integrar el desarrollo web y la bitácora de caso de la App MASP.</div>
-                <div class="rm-task">Verificar el registro de MASP en App Store Connect (iOS).</div>
-                <div class="rm-task">Completar la estabilización de Atención Psicosocial (2ª iteración de QA en curso).</div>
+                <div class="rm-header"><span class="horizon-num">2</span>REPORTES Y REGISTROS QUE SE CONECTAN A LO YA CONSTRUIDO</div>
+                <div class="rm-date">aprox. 3ª semana de sep. a 2ª de oct.</div>
+                <div class="rm-why">Huérfanos y Masculinidades no se construyen desde cero: se apoyan en Registro, Barreras, Notificaciones y Medidas de Emergencia que ya operan. Priorizarlos aquí, después de Rutas, es lo que hace posible esa reutilización.</div>
+
                 <div class="rm-task">
-                    Cerrar LGBTIQ+, Masculinidades y Estabilización.
-                    <span class="rm-task-meta">187 h + 147 h + 250 h</span>
+                    Cerrar los campos de los formularios de reporte y registro de Familiares/Huérfanos y de Masculinidades.
+                    <span class="rm-task-meta">PSWYA-628 · PSWYA-629 · en levantamiento, Sprint 13</span>
                 </div>
                 <div class="rm-task">
-                    Cerrar Tamizaje y Medidas de Emergencia.
-                    <span class="rm-task-meta">35 h + ~154 h</span>
+                    Incorporar los apartados de Barreras y Rutas al formulario de seguimiento psicosocial, igual que ya los usa el agente integral.
+                    <span class="rm-task-meta">PSWYA-613</span>
                 </div>
-                <div class="rm-task">Accesibilidad JAWS en el módulo de Seguimiento.</div>
-                <div class="rm-task">Tableros de Control / BI.</div>
+                <div class="rm-task">
+                    Habilitar que el equipo psicosocial derive casos a Medidas de Emergencia o Estabilización directamente desde el formulario de contacto y sesión.
+                    <span class="rm-task-meta">PSWYA-631</span>
+                </div>
+                <div class="rm-task">
+                    Construir las pantallas para que el agente departamental gestione casos y barreras escaladas por el Mecanismo Articulador.
+                    <span class="rm-task-meta">PSWYA-614</span>
+                </div>
+                <div class="rm-task">Completar la estabilización de Atención Psicosocial (2ª iteración de QA en curso) y cerrar Tamizaje y Medidas de Emergencia.</div>
+            </div>
+
+            <div class="roadmap-card rm-blue">
+                <div class="rm-header"><span class="horizon-num">3</span>LO QUE SE DEJA PARA EL TRAMO FINAL</div>
+                <div class="rm-date">aprox. 3ª semana de oct. a 26-oct, y después</div>
+                <div class="rm-why">No porque no importe, sino porque el sistema puede operar sin esto listo el día del cierre — y forzarlo ahora pondría en riesgo lo de los Horizontes 1 y 2.</div>
+
+                <div class="rm-task">Completar LGBTIQ+ y Masculinidades como módulos plenos, más allá de sus campos de formulario.</div>
+                <div class="rm-task">Cerrar el módulo de Familiares/Huérfanos como flujo completo (más allá de la definición de campos).</div>
+                <div class="rm-task">Integrar el desarrollo web y la bitácora de caso de la App MASP, y verificar su registro en App Store Connect (iOS).</div>
+                <div class="rm-task">Accesibilidad JAWS en el módulo de Seguimiento y Tableros de Control / BI.</div>
                 <div class="rm-task">
                     Documentación técnica desde GitHub, en paralelo.
                     <span class="rm-task-meta">no bloqueante</span>
                 </div>
-                <div class="rm-task">Fase 4: QA, capacitación masiva, mesa de ayuda 24/7, derechos de autor.</div>
-            </div>
-
-            <div class="roadmap-card rm-blue">
-                <div class="rm-header">PRÓXIMOS MESES</div>
-                <div class="rm-date">en paralelo, junto con el Ministerio</div>
-                
+                <div class="rm-task">Fase 4 contractual formal: QA de estrés y seguridad, capacitación masiva, mesa de ayuda 24/7, entrega de derechos de autor.</div>
                 <div class="rm-task">
-                    Habilitar el acceso regulador/auditor del Ministerio de Salud a la base de datos de SALVIA para SIVIGE.
-                    <span class="rm-task-meta">Art. 343, Ley 2294 de 2023</span>
+                    Acceso regulador/auditor del Ministerio de Salud para SIVIGE.
+                    <span class="rm-task-meta">Art. 343, Ley 2294/2023 · próximos meses, fuera de esta ventana</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 04b_Salvia_ops -->
+    <section>
+        <div class="section-header">
+            <h2 style="margin:0; font-size: 1.5rem;">Ajustes operativos en curso</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">lo que ya está en producción o en pruebas, y que el Sprint 13 está afinando</span>
+        </div>
+        <p class="module-desc" style="max-width: 900px; margin-bottom: 1.5rem;">
+            Mientras Rutas y los dos módulos nuevos avanzan, el equipo también está corrigiendo y afinando piezas que ya operan. Esto no es trabajo nuevo: es la clase de ajuste que un sistema en producción necesita constantemente, y que la Dirección debería ver por separado de los tres horizontes anteriores.
+        </p>
+        <div class="ops-grid">
+            <div class="ops-card">
+                <div class="ops-owner">Seguimiento</div>
+                <div class="ops-title">Bug: el botón de crear seguimiento salta el 3x3</div>
+                <div class="ops-desc">El nuevo botón para crear seguimiento omite el protocolo de tres intentos de contacto. En corrección.</div>
+                <span class="ops-ticket">PSWYA-624</span>
+            </div>
+            <div class="ops-card">
+                <div class="ops-owner">Entidades</div>
+                <div class="ops-title">Checklist de tareas al registrar una entidad</div>
+                <div class="ops-desc">El usuario podrá seleccionar las tareas gestionables directamente al diligenciar el formulario de registro de entidades.</div>
+                <span class="ops-ticket">PSWYA-619</span>
+            </div>
+            <div class="ops-card">
+                <div class="ops-owner">Psicosocial</div>
+                <div class="ops-title">Columnas de observación y autor en Derivaciones</div>
+                <div class="ops-desc">La tabla de la sección psicosocial en Derivaciones suma trazabilidad: quién observó qué, y cuándo.</div>
+                <span class="ops-ticket">PSWYA-625</span>
+            </div>
+            <div class="ops-card">
+                <div class="ops-owner">Psicosocial</div>
+                <div class="ops-title">Corrección de redacción en las pantallas</div>
+                <div class="ops-desc">Ajuste de términos en varias pantallas del módulo de Atención Psicosocial, sin cambios de lógica.</div>
+                <span class="ops-ticket">PSWYA-630</span>
+            </div>
+            <div class="ops-card">
+                <div class="ops-owner">Gobernanza</div>
+                <div class="ops-title">Entendimiento del rol de equipo técnico</div>
+                <div class="ops-desc">Se documenta el alcance de un nuevo rol que podrá asignar y revisar tareas del equipo de Seguimiento.</div>
+                <span class="ops-ticket">PSWYA-636</span>
+            </div>
+            <div class="ops-card">
+                <div class="ops-owner">Rutas / Mecanismo Articulador</div>
+                <div class="ops-title">1ª iteración de QA sobre el módulo de Rutas</div>
+                <div class="ops-desc">Diseño del flujograma de pruebas y ejecución del primer ciclo completo de QA.</div>
+                <span class="ops-ticket">PSWYA-637</span>
             </div>
         </div>
     </section>
 
     <!-- 05_Salvia -->
     <footer class="footer">
-        <h2>El sistema ya protege — el cierre del proyecto está en formalizar cómo el Estado entra a mirarlo.</h2>
-        <p>Basado en el Informe Técnico Ejecutivo v4 · 10 documentos oficiales del proyecto + comunicación directa del equipo + Sprints 5-12 y bitácora de horas (salvia_julio.xlsx), 24-ago-2026.</p>
+        <h2>El sistema ya protege — lo que falta es entregarlo en el orden correcto para las ocho semanas que quedan.</h2>
+        <p>Basado en el Plan de Trabajo del Proyecto Evolutivo SALVIA V1 (27-mar-2026), el Informe Técnico Ejecutivo v4, el Guion Funcional de Rutas/Barreras/Enlaces/Entidades/Mecanismo Articulador, la bitácora de horas (salvia_julio.xlsx) y los Sprints 5 a 13 de Jira. Corte: 2-sep-2026.</p>
     </footer>
 
 </div>
