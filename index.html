@@ -507,6 +507,89 @@
             padding: 0.15rem 0.5rem;
             border-radius: 4px;
         }
+
+        /* --- 00b. LOS CINCO MÓDULOS CONTRACTUALES --- */
+        .contract-finding {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-left: 4px solid #d97706;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.75rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .contract-finding strong { color: #92400e; }
+        .contract-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
+        }
+        .contract-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.4rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+        }
+        .contract-card.transversal { background: #f8fafc; border-style: dashed; }
+        .contract-card-head {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+        }
+        .contract-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            border-radius: 50%;
+            background: var(--accent-color, #1d4ed8);
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .contract-card.transversal .contract-num { background: #64748b; }
+        .contract-title { font-weight: 700; font-size: 0.98rem; }
+        .contract-quote {
+            font-style: italic;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-left: 2px solid var(--border-color);
+            padding-left: 0.75rem;
+            margin: 0.5rem 0 0.85rem;
+        }
+        .contract-items { list-style: none; padding: 0; margin: 0; }
+        .contract-item {
+            font-size: 0.85rem;
+            padding: 0.45rem 0;
+            border-top: 1px dashed var(--border-color);
+        }
+        .contract-item:first-child { border-top: none; }
+        .tag-h {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+        }
+        .tag-h1 { background: #fdf2f2; color: #b91c1c; }
+        .tag-h2 { background: #fefce8; color: #a16207; }
+        .tag-h3 { background: #f0fdfa; color: #1d4ed8; }
+        .tag-ops { background: #eff6ff; color: #1d4ed8; }
+        .contract-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            padding-top: 0.6rem;
+            border-top: 1px dashed var(--border-color);
+        }
     </style>
 
 <!--[if gte mso 9]><xml>
@@ -565,7 +648,7 @@
     <section>
         <div class="section-header">
             <h2 style="margin:0; font-size: 1.5rem;">Por qué necesitamos replanificar</h2>
-            
+            <span style="font-size: 0.85rem; color: var(--text-muted);">el plan de trabajo original frente a lo que muestra la evidencia hoy</span>
         </div>
 
         <p class="module-desc" style="max-width: 900px; margin-bottom: 1.5rem;">
@@ -581,15 +664,109 @@
             </div>
             <div class="compare-card real">
                 <div class="compare-label">Lo que muestra el Sprint 13 y el estado real de los módulos</div>
-                <div class="compare-row"><strong>Rutas —</strong> el motor de enrutamiento diferencial y el semáforo sectorial estan en desarrollo; esta semana arranca su primera iteración de QA (PSWYA-637), no su cierre.</div>
+                <div class="compare-row"><strong>Rutas —</strong> el motor de enrutamiento diferencial y el semáforo sectorial siguen en mockup; apenas esta semana arranca su primera iteración de QA (PSWYA-637), no su cierre.</div>
                 <div class="compare-row"><strong>Medidas de Emergencia y LGBTIQ+ —</strong> siguen en desarrollo, no cerrados como asumía la Fase 3.</div>
-                <div class="compare-row"><strong>Alcance ampliado —</strong> Familiares/Huérfanos y Masculinidades entraron como frentes de desarrollo propios; esta semana se están levantando los campos de sus formularios (PSWYA-628, PSWYA-629), no construyendo pantallas.</div>
+                <div class="compare-row"><strong>Alcance ampliado —</strong> Familiares/Huérfanos y Masculinidades entraron como frentes de desarrollo propios; esta semana apenas se están levantando los campos de sus formularios (PSWYA-628, PSWYA-629), no construyendo pantallas.</div>
                 <div class="compare-row"><strong>Sin conciliación de agosto —</strong> la última medición de avance físico confiable sigue siendo la de julio; no tenemos aún el dato de horas ejecutadas en agosto para confirmar si el ritmo se sostuvo.</div>
             </div>
         </div>
 
         <div class="gap-callout">
-            La consecuencia no es que el proyecto esté en riesgo de incumplir — es que <strong>el orden de entrega tiene que cambiar</strong>. Entrar a las seis semanas finales todavía con Rutas en pruebas, con dos módulos nuevos en definición de campos, y sin poder cerrar Fase 4 tal como fue escrito en plan de trabajo, exige priorizar lo que sostiene el resto del sistema. Esa es la lógica de la hoja de ruta que sigue.
+            La consecuencia no es que el proyecto esté en riesgo de incumplir — es que <strong>el orden de entrega tiene que cambiar</strong>. Entrar a las seis semanas finales todavía con Rutas en mockup, con dos módulos nuevos apenas en definición de campos, y sin poder cerrar Fase 4 tal como fue escrita en marzo, exige priorizar lo que sostiene el resto del sistema por encima de lo que el Ministerio pidió más recientemente. Esa es la lógica de la hoja de ruta que sigue.
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 00b_Salvia_contractual -->
+    <section>
+        <div class="section-header">
+            <h2 style="margin:0; font-size: 1.5rem;">Los cinco módulos contractuales del Anexo Técnico</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">ordenando lo que ya está escrito en este panorama según las categorías que define el cliente</span>
+        </div>
+
+        <p class="module-desc" style="max-width: 900px; margin-bottom: 1.25rem;">
+            El cliente nos pidió enmarcar cada elemento de este plan dentro de los cinco módulos que nombra el <strong>Anexo Técnico</strong> del contrato: Seguimiento a los casos, Tamizaje de feminicidio, Medidas de emergencia, LGBTIQ+, y Personas en Actividades Sexuales Pagas (ASP) y App. Volvimos al documento para hacerlo con la definición literal de cada módulo, no con la forma en que el equipo los ha nombrado internamente.
+        </p>
+
+        <div class="contract-finding">
+            <strong>Hallazgo que la Dirección debe tener presente antes de leer la grilla:</strong> varios de los nombres que este panorama —y el equipo— han usado como si fueran módulos propios (Registro, Rutas como motor/semáforo/portal, Barreras como frente independiente, Atención Psicosocial, Estabilización) <strong>no son categorías contractuales propias en el Anexo Técnico</strong>. El Anexo solo les asigna alcance explícito dentro de tres de los cinco módulos: <strong>Barreras</strong> dentro de Seguimiento a los casos ("identificando las barreras que las personas víctimas de VBG manifiesten que tuvieron en la ruta de atención… programando comunicaciones con las entidades para la superación de barreras"), <strong>Registro</strong> dentro de Medidas de emergencia (las personas en riesgo y sus familiares "deberán ser registradas en un módulo específico"), y <strong>Rutas de atención</strong> dentro del Módulo ASP y App ("facilitar el acceso a orientación, rutas de atención y mecanismos de reporte"). Todo lo demás — el detalle funcional de Registro administrativo, la integración de rutas, el seguimiento y monitoreo, las alertas tempranas y la estabilización — el propio Anexo lo remite a un documento aparte: <em>"se puede consultar en el documento técnico soporte – Artículo 343"</em> (pág. 2–3), que no tenemos. Por eso la grilla de abajo incluye una sexta tarjeta, "Componentes base y transversales", para lo que no pertenece de forma literal a ninguno de los cinco.
+        </div>
+
+        <div class="contract-grid">
+            <div class="contract-card">
+                <div class="contract-card-head"><span class="contract-num">1</span><span class="contract-title">Seguimiento a los casos</span></div>
+                <div class="contract-quote">"…identificando las barreras que las personas víctimas de VBG manifiesten que tuvieron en la ruta de atención, programando comunicaciones con las entidades para la superación de barreras… hasta hacer el cierre de los casos." — Anexo Técnico, p. 4</div>
+                <ul class="contract-items">
+                    <li class="contract-item"><span class="tag-h tag-h1">H1</span><span class="tag-h tag-ops">OPS</span>Corregir el bug del botón de crear seguimiento que salta el protocolo 3x3 de contacto <span class="ops-ticket">PSWYA-624</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h2">H2</span>Pantallas para que el agente departamental gestione casos y barreras escaladas por el Mecanismo Articulador <span class="ops-ticket">PSWYA-614</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h2">H2</span>Incorporar los apartados de Barreras y Rutas al formulario de seguimiento psicosocial <span class="ops-ticket">PSWYA-613</span></li>
+                    <li class="contract-item"><span class="tag-h tag-ops">OPS</span>Checklist de tareas gestionables al registrar una entidad <span class="ops-ticket">PSWYA-619</span></li>
+                    <li class="contract-item"><span class="tag-h tag-ops">OPS</span>Entendimiento del rol de equipo técnico en la gobernanza de Seguimiento <span class="ops-ticket">PSWYA-636</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h3">H3</span>Accesibilidad JAWS en el módulo de Seguimiento</li>
+                </ul>
+            </div>
+
+            <div class="contract-card">
+                <div class="contract-card-head"><span class="contract-num">2</span><span class="contract-title">Tamizaje de feminicidio</span></div>
+                <div class="contract-quote">"…realicen una valoración inicial estructurada que permita identificar el nivel de riesgo de la persona que se comunica… la clasificación del riesgo de manera oportuna y estandarizada." — Anexo Técnico, p. 4</div>
+                <ul class="contract-items">
+                    <li class="contract-item"><span class="tag-h tag-h2">H2</span>Cerrar Tamizaje de feminicidio, dentro de la 2ª iteración de QA que agrupa este horizonte</li>
+                </ul>
+                <div class="contract-note">Es el módulo con menos tareas propias en la hoja de ruta — no porque esté descuidado, sino porque es el más cercano a su cierre según el estado reportado en el Sprint 13.</div>
+            </div>
+
+            <div class="contract-card">
+                <div class="contract-card-head"><span class="contract-num">3</span><span class="contract-title">Medidas de emergencia</span></div>
+                <div class="contract-quote">"Las personas en riesgo de feminicidio y las familiares de víctimas de feminicidio deberán ser registradas en un módulo específico que permita valorar de manera estructurada las necesidades derivadas del riesgo o del fallecimiento de su familiar." — Anexo Técnico, p. 4</div>
+                <ul class="contract-items">
+                    <li class="contract-item"><span class="tag-h tag-h2">H2</span>Cerrar Medidas de emergencia, dentro de la 2ª iteración de QA que agrupa este horizonte</li>
+                    <li class="contract-item"><span class="tag-h tag-h2">H2</span>Habilitar que Psicosocial derive casos a Medidas de Emergencia o Estabilización desde el formulario de contacto <span class="ops-ticket">PSWYA-631</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h2">H2</span>Cerrar los campos del formulario de Familiares/Huérfanos <span class="ops-ticket">PSWYA-628</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h3">H3</span>Cerrar Familiares/Huérfanos como flujo completo, más allá de los campos</li>
+                </ul>
+                <div class="contract-note">"Huérfanos" no aparece en ninguna parte del Anexo Técnico. La única base contractual literal para este frente es la mención a "familiares de víctimas de feminicidio" en la definición de Medidas de emergencia — lo tratamos como una extensión razonable de ese alcance, no como una asignación explícita del Anexo.</div>
+            </div>
+
+            <div class="contract-card">
+                <div class="contract-card-head"><span class="contract-num">4</span><span class="contract-title">LGBTIQ+</span></div>
+                <div class="contract-quote">"…se requiere la creación de un módulo específico que permita profundizar en las particularidades de los casos, las necesidades diferenciadas y las situaciones que demanden un abordaje especializado." — Anexo Técnico, p. 4</div>
+                <ul class="contract-items">
+                    <li class="contract-item"><span class="tag-h tag-h3">H3</span>Completar LGBTIQ+ como módulo pleno, más allá de su desarrollo actual</li>
+                </ul>
+            </div>
+
+            <div class="contract-card">
+                <div class="contract-card-head"><span class="contract-num">5</span><span class="contract-title">Personas ASP y App</span></div>
+                <div class="contract-quote">"Esta herramienta deberá facilitar el acceso a orientación, rutas de atención y mecanismos de reporte seguros y confidenciales." — Anexo Técnico, p. 5</div>
+                <ul class="contract-items">
+                    <li class="contract-item"><span class="tag-h tag-h3">H3</span>Integrar el desarrollo web y la bitácora de caso de la App MASP; verificar registro en App Store Connect (iOS)</li>
+                </ul>
+                <div class="contract-note">Se desarrollará una aplicación en SALVIA para prevenir violencias en actividades sexuales pagas, facilitando acceso a orientación, atención y reportes seguros. El desarrollo incluirá planeación, diseño y pruebas, siguiendo directrices técnicas y garantizando enfoque diferencial y protección de derechos.</div>
+            </div>
+
+            <div class="contract-card transversal">
+                <div class="contract-card-head"><span class="contract-num">T</span><span class="contract-title">Componentes base y transversales de SALVIA</span></div>
+                <div class="contract-quote">"La información detallada del funcionamiento del registro administrativo… la integración de las rutas de atención en VBG, el seguimiento y monitoreo… y estrategias de reacción frente a barreras de acceso a la justicia y medidas de protección, atención y estabilización… se puede consultar en el documento técnico soporte – Artículo 343." — Anexo Técnico, p. 2–3</div>
+                <ul class="contract-items">
+                    <li class="contract-item"><span class="tag-h tag-h1">H1</span>Motor de enrutamiento diferencial y semáforo sectorial de Rutas, de mockup a desarrollo real <span class="ops-ticket">207h · Bolsa 2</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h1">H1</span><span class="tag-h tag-ops">OPS</span>1ª iteración de QA de Rutas <span class="ops-ticket">PSWYA-637</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h1">H1</span>Cerrar y formalizar el portal de usuario de entidad (ICBF y demás entidades operativas)</li>
+                    <li class="contract-item"><span class="tag-h tag-h2">H2</span>Completar la estabilización de Atención Psicosocial (2ª iteración de QA en curso)</li>
+                    <li class="contract-item"><span class="tag-h tag-ops">OPS</span>Columnas de observación y autor en Derivaciones (Psicosocial) <span class="ops-ticket">PSWYA-625</span></li>
+                    <li class="contract-item"><span class="tag-h tag-ops">OPS</span>Corrección de redacción en pantallas de Atención Psicosocial <span class="ops-ticket">PSWYA-630</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h3">H3</span>Tableros de Control / BI</li>
+                    <li class="contract-item"><span class="tag-h tag-h3">H3</span>Documentación técnica desde GitHub <span class="ops-ticket">no bloqueante</span></li>
+                    <li class="contract-item"><span class="tag-h tag-h3">H3</span>Fase 4 contractual formal: QA de estrés y seguridad, capacitación masiva, mesa de ayuda 24/7, derechos de autor</li>
+                    <li class="contract-item"><span class="tag-h tag-h3">H3</span>Acceso regulador/auditor del Ministerio de Salud para SIVIGE <span class="ops-ticket">Art. 343</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contract-note" style="margin-top: 1.5rem; max-width: 900px;">
+            <strong>Nota aparte — Masculinidades:</strong> el Anexo Técnico no lo nombra como módulo ni le asigna alcance propio. La palabra "masculinidades" no aparece en el documento; lo único que aparece, dos veces (pág. 2 y pág. 18), es una mención a la "masculinidad hegemónica" dentro de la descripción de la población beneficiaria del contrato, no como un desarrollo contratado. El equipo lo trata como frente de desarrollo propio (campos de formulario en curso, <span class="ops-ticket">PSWYA-629</span>) por instrucción del cliente, pero conviene que la Dirección tenga claro que no tiene el mismo respaldo contractual literal que los cinco módulos o los componentes transversales derivados del Art. 343.
+            <br><br>
+            <strong>Sobre el presupuesto:</strong> el Anexo no desglosa horas por módulo. Solo define dos bolsas: una de $980.745.580 (~3.748 h) que cubre conjuntamente los módulos 1 a 4 "u otros que se requieran dentro del sistema Salvia", y otra de $433.000.000 (~1.655 h) exclusiva para ASP y App. Cualquier priorización entre los módulos 1 a 4 —como la que propone la hoja de ruta de este documento— es una decisión de gestión del equipo, no una instrucción del Anexo.
         </div>
     </section>
 
