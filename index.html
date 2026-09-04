@@ -24,7 +24,7 @@
             --status-red-bg: #fee2e2;
             --status-red-text: #991b1b;
         }
-
+ 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -33,17 +33,17 @@
             padding: 2rem;
             line-height: 1.5;
         }
-
+ 
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-
+ 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             color: #111827;
         }
-
+ 
         /* --- 01. ENCABEZADO --- */
         .overline {
             font-size: 0.75rem;
@@ -52,19 +52,19 @@
             color: #374151;
             text-transform: uppercase;
         }
-
+ 
         .main-title {
             font-size: 2.5rem;
             margin: 0.5rem 0 1rem;
             line-height: 1.2;
         }
-
+ 
         .subtitle {
             color: var(--text-muted);
             max-width: 600px;
             margin-bottom: 2rem;
         }
-
+ 
         .legend {
             display: flex;
             gap: 1.5rem;
@@ -73,7 +73,7 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-
+ 
         .legend-item::before {
             content: '';
             display: inline-block;
@@ -86,14 +86,14 @@
         .legend-item.brown::before { background-color: var(--status-brown-text); }
         .legend-item.blue::before { background-color: var(--status-blue-text); }
         .legend-item.red::before { background-color: var(--status-red-text); }
-
+ 
         .summary-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
-
+ 
         .card {
             background: var(--white);
             border-radius: 8px;
@@ -101,9 +101,9 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             border-top: 4px solid var(--text-main);
         }
-
+ 
         .card.card-highlight { border-top-color: #991b1b; }
-
+ 
         .card-label {
             font-size: 0.75rem;
             font-weight: 600;
@@ -111,7 +111,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-
+ 
         .card-value {
             font-size: 2rem;
             font-family: 'Playfair Display', serif;
@@ -120,18 +120,18 @@
         }
         
         .card-highlight .card-value { color: #991b1b; }
-
+ 
         .card-desc {
             font-size: 0.85rem;
             color: var(--text-muted);
         }
-
+ 
         hr {
             border: 0;
             border-top: 1px solid var(--border-color);
             margin: 3rem 0;
         }
-
+ 
         /* --- 02. EL SISTEMA EN TRES CAPAS --- */
         .section-header {
             display: flex;
@@ -139,20 +139,20 @@
             align-items: baseline;
             margin-bottom: 1.5rem;
         }
-
+ 
         .three-columns {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
-
+ 
         .column-card {
             background: var(--white);
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-
+ 
         .col-header {
             display: flex;
             justify-content: space-between;
@@ -164,23 +164,23 @@
             font-size: 1.25rem;
             font-weight: 700;
         }
-
+ 
         .module-item {
             margin-bottom: 1.5rem;
         }
-
+ 
         .module-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0.25rem;
         }
-
+ 
         .module-title {
             font-weight: 600;
             font-size: 0.95rem;
         }
-
+ 
         .badge {
             font-size: 0.7rem;
             font-weight: 600;
@@ -197,13 +197,13 @@
             content: '•';
             margin-right: 4px;
         }
-
+ 
         .module-desc {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin: 0;
         }
-
+ 
         /* Arquitectura y Avance */
         .arch-image {
             width: 100%;
@@ -211,14 +211,14 @@
             margin-bottom: 1rem;
             border-radius: 4px;
         }
-
+ 
         .tags-container {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
         }
-
+ 
         .tag {
             background: #f3f4f6;
             color: #374151;
@@ -227,11 +227,11 @@
             border-radius: 4px;
             font-family: monospace;
         }
-
+ 
         .progress-block {
             margin-bottom: 1rem;
         }
-
+ 
         .progress-header {
             display: flex;
             justify-content: space-between;
@@ -239,21 +239,21 @@
             font-weight: 600;
             margin-bottom: 0.4rem;
         }
-
+ 
         .progress-bar-bg {
             background: #e5e7eb;
             height: 8px;
             border-radius: 4px;
             overflow: hidden;
         }
-
+ 
         .progress-bar-fill {
             background: #1f2937;
             height: 100%;
             width: 0%; /* Inicial para animación JS */
             transition: width 1s ease-in-out;
         }
-
+ 
         /* --- 03. DOS VÍAS DE ACCESO (DIAGRAMA CSS) --- */
         .diagram-container {
             background: var(--white);
@@ -262,7 +262,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             margin-bottom: 3rem;
         }
-
+ 
         .css-diagram {
             display: flex;
             align-items: center;
@@ -271,7 +271,7 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-
+ 
         .diagram-box {
             border: 1px solid #94a3b8;
             border-radius: 6px;
@@ -281,13 +281,13 @@
             flex: 1;
             min-width: 200px;
         }
-
+ 
         .diagram-box.blue-bg { background: #f1f5f9; border-color: #64748b; }
         .diagram-box.red-dashed { border: 1px dashed #ef4444; background: #fef2f2; }
         
         .diagram-box strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
         .diagram-box span { font-size: 0.75rem; color: var(--text-muted); }
-
+ 
         .diagram-arrow {
             flex: 0 0 40px;
             height: 2px;
@@ -306,7 +306,7 @@
         
         .diagram-arrow.dashed { background: transparent; border-top: 2px dashed #ef4444; }
         .diagram-arrow.dashed::after { border-left-color: #ef4444; top: -5px; }
-
+ 
         .system-boundary {
             border: 2px solid #cbd5e1;
             border-radius: 8px;
@@ -329,23 +329,23 @@
             color: #64748b;
             letter-spacing: 0.05em;
         }
-
+ 
         /* --- 04. HOJA DE RUTA --- */
         .roadmap-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
-
+ 
         .roadmap-card {
             border-radius: 8px;
             padding: 1.5rem;
         }
-
+ 
         .rm-red { background: #fdf2f2; border-top: 4px solid #b91c1c; }
         .rm-yellow { background: #fefce8; border-top: 4px solid #a16207; }
         .rm-blue { background: #f0fdfa; border-top: 4px solid #1d4ed8; }
-
+ 
         .rm-header {
             font-size: 0.85rem;
             font-weight: 700;
@@ -357,27 +357,27 @@
         .rm-red .rm-header { color: #b91c1c; }
         .rm-yellow .rm-header { color: #a16207; }
         .rm-blue .rm-header { color: #1d4ed8; }
-
+ 
         .rm-date {
             font-size: 0.75rem;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
-
+ 
         .rm-task {
             font-size: 0.9rem;
             margin-bottom: 1rem;
             padding-left: 1rem;
             position: relative;
         }
-
+ 
         .rm-task::before {
             content: '—';
             position: absolute;
             left: 0;
             color: var(--text-muted);
         }
-
+ 
         .rm-task-meta {
             display: block;
             font-family: monospace;
@@ -385,29 +385,29 @@
             color: #6b7280;
             margin-top: 0.25rem;
         }
-
+ 
         /* --- 05. FOOTER --- */
         .footer {
             margin-top: 4rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border-color);
         }
-
+ 
         .footer h2 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
-
+ 
         .footer p {
             font-size: 0.85rem;
             color: var(--text-muted);
         }
-
+ 
         @media (max-width: 768px) {
             .css-diagram { flex-direction: column; align-items: stretch; }
             .diagram-arrow { display: none; }
         }
-
+ 
         /* --- 06. PLAN ORIGINAL VS. REALIDAD --- */
         .compare-grid {
             display: grid;
@@ -448,7 +448,7 @@
             line-height: 1.6;
         }
         .gap-callout strong { color: #fbbf24; }
-
+ 
         /* --- 07. HOJA DE RUTA POR HORIZONTES --- */
         .horizon-num {
             display: inline-flex;
@@ -473,7 +473,7 @@
             padding-bottom: 1rem;
             border-bottom: 1px dashed var(--border-color);
         }
-
+ 
         /* --- 08. AJUSTES OPERATIVOS EN CURSO --- */
         .ops-grid {
             display: grid;
@@ -507,7 +507,7 @@
             padding: 0.15rem 0.5rem;
             border-radius: 4px;
         }
-
+ 
         /* --- 00b. LOS CINCO MÓDULOS CONTRACTUALES --- */
         .contract-finding {
             background: #fffbeb;
@@ -590,8 +590,118 @@
             padding-top: 0.6rem;
             border-top: 1px dashed var(--border-color);
         }
+ 
+        /* --- 09. CRONOGRAMA DE EJECUCIÓN (GANTT POR BLOQUES) --- */
+        .eval-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-left: 4px solid #b91c1c;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.75rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .eval-box strong { color: #991b1b; }
+        .eval-box ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+        .eval-box li { margin-bottom: 0.6rem; }
+        .confirm-note {
+            background: var(--status-green-bg);
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #166534;
+            border-radius: 8px;
+            padding: 1.1rem 1.4rem;
+            margin-bottom: 1.75rem;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+        .confirm-note strong { color: var(--status-green-text); }
+        .confirm-note ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+        .confirm-note li { margin-bottom: 0.35rem; }
+        .verify-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #991b1b;
+            background: #fee2e2;
+            padding: 0.1rem 0.45rem;
+            border-radius: 4px;
+            margin-left: 0.35rem;
+            vertical-align: middle;
+        }
+        .exec-timeline {
+            display: flex;
+            gap: 4px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        .exec-block {
+            padding: 0.9rem 1rem;
+            color: var(--white);
+        }
+        .exec-block .eb-title { font-weight: 700; font-size: 0.8rem; margin-bottom: 0.2rem; }
+        .exec-block .eb-date { font-size: 0.68rem; opacity: 0.9; }
+        .exec-block.eb1 { background: #b91c1c; flex: 14; }
+        .exec-block.eb2 { background: #c2410c; flex: 14; }
+        .exec-block.eb3 { background: #a16207; flex: 7; }
+        .exec-block.eb4 { background: #1d4ed8; flex: 8; }
+        .exec-caption {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .dev-table-wrap {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        table.dev-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            min-width: 760px;
+        }
+        table.dev-table th, table.dev-table td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 0.9rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        table.dev-table thead th {
+            background: #f8fafc;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        table.dev-table thead th span { display: block; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.68rem; color: var(--text-muted); margin-top: 0.15rem; }
+        table.dev-table td:first-child { font-weight: 600; white-space: nowrap; background: #fafafa; }
+        .gantt-hitos { list-style: none; padding: 0; margin: 0 0 2rem; }
+        .gantt-hito {
+            font-size: 0.88rem;
+            padding: 0.6rem 0 0.6rem 1.1rem;
+            border-left: 2px solid var(--border-color);
+            margin-left: 0.3rem;
+            position: relative;
+        }
+        .gantt-hito::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 1.05rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #1d4ed8;
+        }
+        .gantt-hito.final::before { background: #b91c1c; width: 10px; height: 10px; left: -6px; }
+        .gantt-hito strong { display: inline-block; margin-right: 0.4rem; }
     </style>
-
+ 
 <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
 <mso:_ApprovalStatus msdt:dt="string">0</mso:_ApprovalStatus>
@@ -602,7 +712,7 @@
 </xml><![endif]-->
 </head>
 <body>
-
+ 
 <div class="container">
     
     <!-- 01_Salvia -->
@@ -610,14 +720,14 @@
         <p class="overline">ECOSISTEMA SALVIA — ETAPA 2 · INSUMO PARA DIRECCIÓN DE PROYECTO</p>
         <h1 class="main-title">Panorama consolidado: un plan<br>realista para las 6 semanas que quedan</h1>
         <p class="subtitle">Qué ya opera, qué sigue en construcción, y por qué el plan de trabajo original ya no describe con precisión dónde estamos. Corte al 2 de septiembre de 2026 — Sprint 13 en ejecución.</p>
-
+ 
         <div class="legend">
             <span class="legend-item green">Completado / operativo</span>
             <span class="legend-item brown">En desarrollo</span>
             <span class="legend-item blue">En mockup / diseño / definición</span>
             <span class="legend-item red">Pendiente crítico / sin definir</span>
         </div>
-
+ 
         <div class="summary-grid">
             <div class="card">
                 <div class="card-label">AVANCE FÍSICO</div>
@@ -627,7 +737,7 @@
             <div class="card card-highlight">
                 <div class="card-label">PLAZO RESTANTE</div>
                 <div class="card-value">~6 sem.</div>
-                <div class="card-desc">2-sep a 26-oct-2026 · cierre contractual sin prórroga conocida</div>
+                <div class="card-desc">2-sep a 12-oct-2026 (objetivo interno) · 26-oct-2026 (límite contractual)</div>
             </div>
             <div class="card">
                 <div class="card-label">BOLSA DE HORAS</div>
@@ -641,20 +751,20 @@
             </div>
         </div>
     </header>
-
+ 
     <hr>
-
+ 
     <!-- 00_Salvia_realidad -->
     <section>
         <div class="section-header">
             <h2 style="margin:0; font-size: 1.5rem;">Por qué necesitamos replanificar</h2>
             <span style="font-size: 0.85rem; color: var(--text-muted);">el plan de trabajo original frente a lo que muestra la evidencia hoy</span>
         </div>
-
+ 
         <p class="module-desc" style="max-width: 900px; margin-bottom: 1.5rem;">
             El Plan de Trabajo del Proyecto Evolutivo SALVIA (V1, emitido el 27 de marzo de 2026) es y sigue siendo nuestra ruta contractual. Pero fue escrito con el sistema visto desde marzo, y hoy —a seis semanas del cierre— la evidencia de sprints y la definición real de alcance nos obligan a mostrarle a la Dirección un plan que sea honesto con el tiempo que queda, no uno que repita una proyección que ya no se está cumpliendo.
         </p>
-
+ 
         <div class="compare-grid">
             <div class="compare-card plan">
                 <div class="compare-label">Lo que el plan original (27-mar-2026) asumía</div>
@@ -670,29 +780,29 @@
                 <div class="compare-row"><strong>Sin conciliación de agosto —</strong> la última medición de avance físico confiable sigue siendo la de julio; no tenemos aún el dato de horas ejecutadas en agosto para confirmar si el ritmo se sostuvo.</div>
             </div>
         </div>
-
+ 
         <div class="gap-callout">
             La consecuencia no es que el proyecto esté en riesgo de incumplir — es que <strong>el orden de entrega tiene que cambiar</strong>. Entrar a las seis semanas finales todavía con Rutas en mockup, con dos módulos nuevos apenas en definición de campos, y sin poder cerrar Fase 4 tal como fue escrita en marzo, exige priorizar lo que sostiene el resto del sistema por encima de lo que el Ministerio pidió más recientemente. Esa es la lógica de la hoja de ruta que sigue.
         </div>
     </section>
-
+ 
     <hr>
-
+ 
     <!-- 00b_Salvia_contractual -->
     <section>
         <div class="section-header">
             <h2 style="margin:0; font-size: 1.5rem;">Los cinco módulos contractuales del Anexo Técnico</h2>
             <span style="font-size: 0.85rem; color: var(--text-muted);">ordenando lo que ya está escrito en este panorama según las categorías que define el cliente</span>
         </div>
-
+ 
         <p class="module-desc" style="max-width: 900px; margin-bottom: 1.25rem;">
             El cliente nos pidió enmarcar cada elemento de este plan dentro de los cinco módulos que nombra el <strong>Anexo Técnico</strong> del contrato: Seguimiento a los casos, Tamizaje de feminicidio, Medidas de emergencia, LGBTIQ+, y Personas en Actividades Sexuales Pagas (ASP) y App. Volvimos al documento para hacerlo con la definición literal de cada módulo, no con la forma en que el equipo los ha nombrado internamente.
         </p>
-
+ 
         <div class="contract-finding">
-            <strong>Hallazgo que la Dirección debe tener presente antes de leer la grilla:</strong> varios de los nombres que este panorama —y el equipo— han usado como si fueran módulos propios (Registro, Rutas como motor/semáforo/portal, Barreras como frente independiente, Atención Psicosocial, Estabilización) <strong>no son categorías contractuales propias en el Anexo Técnico</strong>. El Anexo solo les asigna alcance explícito dentro de tres de los cinco módulos: <strong>Barreras</strong> dentro de Seguimiento a los casos ("identificando las barreras que las personas víctimas de VBG manifiesten que tuvieron en la ruta de atención… programando comunicaciones con las entidades para la superación de barreras"), <strong>Registro</strong> dentro de Medidas de emergencia (las personas en riesgo y sus familiares "deberán ser registradas en un módulo específico"), y <strong>Rutas de atención</strong> dentro del Módulo ASP y App ("facilitar el acceso a orientación, rutas de atención y mecanismos de reporte"). Todo lo demás — el detalle funcional de Registro administrativo, la integración de rutas, el seguimiento y monitoreo, las alertas tempranas y la estabilización — el propio Anexo lo remite a un documento aparte: <em>"se puede consultar en el documento técnico soporte – Artículo 343"</em> (pág. 2–3), que no tenemos. Por eso la grilla de abajo incluye una sexta tarjeta, "Componentes base y transversales", para lo que no pertenece de forma literal a ninguno de los cinco.
+            <strong>Hallazgo que la Dirección debe tener presente antes de leer la grilla:</strong> varios de los nombres que este panorama —y el equipo— han usado como si fueran módulos propios (Registro, Rutas como motor/semáforo/portal, Barreras como frente independiente, Atención Psicosocial, Estabilización) <strong>no son categorías contractuales propias en el Anexo Técnico</strong>. El Anexo solo les asigna alcance explícito dentro de tres de los cinco módulos: <strong>Barreras</strong> dentro de Seguimiento a los casos ("identificando las barreras que las personas víctimas de VBG manifiesten que tuvieron en la ruta de atención… programando comunicaciones con las entidades para la superación de barreras"), <strong>Registro</strong> dentro de Medidas de emergencia (las personas en riesgo y sus familiares "deberán ser registradas en un módulo específico"), y <strong>Rutas de atención</strong> dentro del Módulo ASP y App ("facilitar el acceso a orientación, rutas de atención y mecanismos de reporte"). Todo lo demás — el detalle funcional de Registro administrativo, la integración de rutas, el seguimiento y monitoreo, las alertas tempranas y la estabilización — el propio Anexo lo remite a un documento aparte: <em>"se puede consultar en el documento técnico soporte – Artículo 343"</em> (pág. 2–3). Por eso la grilla de abajo incluye una sexta tarjeta, "Componentes base y transversales", para lo que no pertenece de forma literal a ninguno de los cinco.
         </div>
-
+ 
         <div class="contract-grid">
             <div class="contract-card">
                 <div class="contract-card-head"><span class="contract-num">1</span><span class="contract-title">Seguimiento a los casos</span></div>
@@ -706,7 +816,7 @@
                     <li class="contract-item"><span class="tag-h tag-h3">H3</span>Accesibilidad JAWS en el módulo de Seguimiento</li>
                 </ul>
             </div>
-
+ 
             <div class="contract-card">
                 <div class="contract-card-head"><span class="contract-num">2</span><span class="contract-title">Tamizaje de feminicidio</span></div>
                 <div class="contract-quote">"…realicen una valoración inicial estructurada que permita identificar el nivel de riesgo de la persona que se comunica… la clasificación del riesgo de manera oportuna y estandarizada." — Anexo Técnico, p. 4</div>
@@ -715,7 +825,7 @@
                 </ul>
                 <div class="contract-note">Es el módulo con menos tareas propias en la hoja de ruta — no porque esté descuidado, sino porque es el más cercano a su cierre según el estado reportado en el Sprint 13.</div>
             </div>
-
+ 
             <div class="contract-card">
                 <div class="contract-card-head"><span class="contract-num">3</span><span class="contract-title">Medidas de emergencia</span></div>
                 <div class="contract-quote">"Las personas en riesgo de feminicidio y las familiares de víctimas de feminicidio deberán ser registradas en un módulo específico que permita valorar de manera estructurada las necesidades derivadas del riesgo o del fallecimiento de su familiar." — Anexo Técnico, p. 4</div>
@@ -725,9 +835,9 @@
                     <li class="contract-item"><span class="tag-h tag-h2">H2</span>Cerrar los campos del formulario de Familiares/Huérfanos <span class="ops-ticket">PSWYA-628</span></li>
                     <li class="contract-item"><span class="tag-h tag-h3">H3</span>Cerrar Familiares/Huérfanos como flujo completo, más allá de los campos</li>
                 </ul>
-                <div class="contract-note">"Huérfanos" no aparece en ninguna parte del Anexo Técnico. La única base contractual literal para este frente es la mención a "familiares de víctimas de feminicidio" en la definición de Medidas de emergencia — lo tratamos como una extensión razonable de ese alcance, no como una asignación explícita del Anexo.</div>
+                <div class="contract-note">"Huérfanos" no aparece en ninguna parte del Anexo Técnico. La base contractual literal para este frente sigue siendo la mención a "familiares de víctimas de feminicidio" en la definición de Medidas de emergencia. Fuera del Anexo, sí existe respaldo normativo directo: la Ley 2530 de 2025 protege a NNA y jóvenes hasta los 25 años en orfandad por feminicidio y crea un Registro Nacional a cargo de la Fiscalía, y la Resolución 860 de 2024 (Min. Igualdad y Equidad) incluye explícitamente a hijos/as, padres, madres y hermanos/as de víctimas como beneficiarios de medidas de emergencia. Es decir: el Anexo no lo nombra, pero la ley sí lo exige — seguimos tratando su alcance como una extensión razonable del Módulo 3, ahora con base legal confirmada.</div>
             </div>
-
+ 
             <div class="contract-card">
                 <div class="contract-card-head"><span class="contract-num">4</span><span class="contract-title">LGBTIQ+</span></div>
                 <div class="contract-quote">"…se requiere la creación de un módulo específico que permita profundizar en las particularidades de los casos, las necesidades diferenciadas y las situaciones que demanden un abordaje especializado." — Anexo Técnico, p. 4</div>
@@ -735,7 +845,7 @@
                     <li class="contract-item"><span class="tag-h tag-h3">H3</span>Completar LGBTIQ+ como módulo pleno, más allá de su desarrollo actual</li>
                 </ul>
             </div>
-
+ 
             <div class="contract-card">
                 <div class="contract-card-head"><span class="contract-num">5</span><span class="contract-title">Personas ASP y App</span></div>
                 <div class="contract-quote">"Esta herramienta deberá facilitar el acceso a orientación, rutas de atención y mecanismos de reporte seguros y confidenciales." — Anexo Técnico, p. 5</div>
@@ -744,7 +854,7 @@
                 </ul>
                 <div class="contract-note">Se desarrollará una aplicación en SALVIA para prevenir violencias en actividades sexuales pagas, facilitando acceso a orientación, atención y reportes seguros. El desarrollo incluirá planeación, diseño y pruebas, siguiendo directrices técnicas y garantizando enfoque diferencial y protección de derechos.</div>
             </div>
-
+ 
             <div class="contract-card transversal">
                 <div class="contract-card-head"><span class="contract-num">T</span><span class="contract-title">Componentes base y transversales de SALVIA</span></div>
                 <div class="contract-quote">"La información detallada del funcionamiento del registro administrativo… la integración de las rutas de atención en VBG, el seguimiento y monitoreo… y estrategias de reacción frente a barreras de acceso a la justicia y medidas de protección, atención y estabilización… se puede consultar en el documento técnico soporte – Artículo 343." — Anexo Técnico, p. 2–3</div>
@@ -762,23 +872,23 @@
                 </ul>
             </div>
         </div>
-
+ 
         <div class="contract-note" style="margin-top: 1.5rem; max-width: 900px;">
             <strong>Nota aparte — Masculinidades:</strong> el Anexo Técnico no lo nombra como módulo ni le asigna alcance propio. La palabra "masculinidades" no aparece en el documento; lo único que aparece, dos veces (pág. 2 y pág. 18), es una mención a la "masculinidad hegemónica" dentro de la descripción de la población beneficiaria del contrato, no como un desarrollo contratado. El equipo lo trata como frente de desarrollo propio (campos de formulario en curso, <span class="ops-ticket">PSWYA-629</span>) por instrucción del cliente, pero conviene que la Dirección tenga claro que no tiene el mismo respaldo contractual literal que los cinco módulos o los componentes transversales derivados del Art. 343.
             <br><br>
             <strong>Sobre el presupuesto:</strong> el Anexo no desglosa horas por módulo. Solo define dos bolsas: una de $980.745.580 (~3.748 h) que cubre conjuntamente los módulos 1 a 4 "u otros que se requieran dentro del sistema Salvia", y otra de $433.000.000 (~1.655 h) exclusiva para ASP y App. Cualquier priorización entre los módulos 1 a 4 —como la que propone la hoja de ruta de este documento— es una decisión de gestión del equipo, no una instrucción del Anexo.
         </div>
     </section>
-
+ 
     <hr>
-
+ 
     <!-- 02_Salvia -->
     <section>
         <div class="section-header">
             <h2 style="margin:0; font-size: 1.8rem;">El sistema, en tres capas</h2>
             <span style="font-size: 0.85rem; color: var(--text-muted);">módulos · arquitectura y datos · entidades externas</span>
         </div>
-
+ 
         <div class="three-columns">
             <!-- Columna 1: Módulos -->
             <div class="column-card">
@@ -794,7 +904,7 @@
                     </div>
                     <p class="module-desc">Base del sistema, en producción desde la Etapa 1.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Seguimiento</span>
@@ -802,7 +912,7 @@
                     </div>
                     <p class="module-desc">Núcleo operativo — 32 HU verificadas en código.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Barreras y Tareas</span>
@@ -810,7 +920,7 @@
                     </div>
                     <p class="module-desc">27 HU — flujo de oficios y escalamiento institucional.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Atención Psicosocial</span>
@@ -818,7 +928,7 @@
                     </div>
                     <p class="module-desc">20 HU — duplas, sesiones y confidencialidad reforzada. 2ª iteración de QA y ajustes de fondo hasta el Sprint 12</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Tamizaje de Feminicidio</span>
@@ -826,7 +936,7 @@
                     </div>
                     <p class="module-desc">Fórmulas y formularios de riesgo bajo estructura EAV.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Medidas de Emergencia</span>
@@ -834,7 +944,7 @@
                     </div>
                     <p class="module-desc">Caracterización, otorgamiento y alertas de prórroga.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">App MASP</span>
@@ -842,7 +952,7 @@
                     </div>
                     <p class="module-desc">Pánico, reporte y Línea 155 ya en Play Store. Falta integración web y bitácora de caso.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">LGBTIQ+</span>
@@ -850,7 +960,7 @@
                     </div>
                     <p class="module-desc">Registro especializado y variables diferenciales.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Masculinidades</span>
@@ -858,7 +968,7 @@
                     </div>
                     <p class="module-desc">Formulario de reporte y registro en levantamiento esta semana (Sprint 13). Alcance contractual por confirmar con el Ministerio.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Familiares y Registro Nacional de Huérfanos</span>
@@ -866,7 +976,7 @@
                     </div>
                     <p class="module-desc">Formulario de reporte y registro en levantamiento esta semana (Sprint 13). Reutiliza, según diseño, el mismo aparato de Rutas, Barreras, Notificaciones y Medidas de Emergencia ya construido para víctimas directas.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Estabilización</span>
@@ -874,7 +984,7 @@
                     </div>
                     <p class="module-desc">Gestión de remisiones y trazabilidad de beneficios.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Rutas Diferenciales - motor y semáforo sectorial</span>
@@ -882,7 +992,7 @@
                     </div>
                     <p class="module-desc">Motor de enrutamiento — condiciona el acceso de entidades externas. Semáforo por sector — la única pieza de Rutas que sigue en diseño.</p>
                 </div>
-
+ 
                 <div class="module-item">
                     <div class="module-header">
                         <span class="module-title">Portal de usuario de entidad</span>
@@ -891,7 +1001,7 @@
                     <p class="module-desc">Directorio, detalle de caso, tareas y rutas asignadas — pantallas reales desde el Sprint 8.</p>
                 </div>
             </div>
-
+ 
             <!-- Columna 2: Arquitectura y datos -->
             <div class="column-card">
                 <div class="col-header">
@@ -909,7 +1019,7 @@
                     <span class="tag">HTTPS / SSL (AWS)</span>
                     <span class="tag">Timeline forense inmutable</span>
                 </div>
-
+ 
                 <div class="progress-block">
                     <div class="progress-header">
                         <span>Bolsa 1 — Prevención (núcleo)</span>
@@ -919,7 +1029,7 @@
                         <div class="progress-bar-fill" data-width="73.8"></div>
                     </div>
                 </div>
-
+ 
                 <div class="progress-block">
                     <div class="progress-header">
                         <span>Bolsa 2 — Mujeres ASP / MASP</span>
@@ -929,7 +1039,7 @@
                         <div class="progress-bar-fill" data-width="31.4"></div>
                     </div>
                 </div>
-
+ 
                 <div class="progress-block" style="margin-top: 1.5rem;">
                     <div class="progress-header" style="font-size: 1rem;">
                         <span>Global</span>
@@ -940,19 +1050,19 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Columna 3: Entidades -->
             <div class="column-card">
                 <div class="col-header">
                     <span>Entidades y canales de acceso</span>
                     <span style="color:var(--text-muted); font-size: 0.9rem;">5</span>
                 </div>
-
+ 
                 <div class="module-item">
                     <span class="module-title">Línea 155</span>
                     <p class="module-desc" style="margin-top:0.25rem;">Canal primario de ingreso de casos. <span class="badge green">Operativo</span></p>
                 </div>
-
+ 
                 <div class="module-item">
                     <span class="module-title">Mecanismo Articulador</span>
                     <p class="module-desc" style="margin-top:0.25rem;">Municipal → Departamental/Distrital → Nacional.</p>
@@ -961,18 +1071,18 @@
                         <span style="font-family: monospace; font-size: 0.7rem; color: #9ca3af; margin-left: 0.5rem;">Decreto 1710 de 2020</span>
                     </div>
                 </div>
-
+ 
                 <div class="module-item">
                     <span class="module-title">ICBF</span>
                     <p class="module-desc" style="margin-top:0.25rem;">Usuario/rol como entidad-actor. <span class="badge blue">Vía Rutas · mockup</span></p>
                 </div>
-
+ 
                 <div class="module-item">
                     <span class="module-title">Fiscalía · Comisaría de Familia · Medicina Legal · Defensoría</span>
                     <p class="module-desc" style="margin-top:0.25rem;">Usuarios/rol como entidades-actor.</p>
                     <div style="margin-top: 0.3rem;"><span class="badge blue">Vía Rutas · mockup</span></div>
                 </div>
-
+ 
                 <div class="module-item" style="margin-top: 2rem;">
                     <span class="module-title">Ministerio de Salud (SIVIGE)</span>
                     <p class="module-desc" style="margin-top:0.25rem;">Acceso <strong>regulador y auditor</strong> a la base de datos, no usuario de Rutas. <span class="badge red">Sin definir</span></p>
@@ -981,16 +1091,16 @@
             </div>
         </div>
     </section>
-
+ 
     <hr>
-
+ 
     <!-- 03_Salvia -->
     <section>
         <div class="section-header">
             <h2 style="margin:0; font-size: 1.5rem;">Dos vías de acceso externo — no una</h2>
             <span style="font-size: 0.85rem; color: var(--text-muted);">el punto que hay que formalizar con el Ministerio</span>
         </div>
-
+ 
         <div class="diagram-container">
             <!-- Fila 1 del diagrama -->
             <div class="css-diagram">
@@ -1032,26 +1142,26 @@
                 <div class="diagram-arrow dashed"></div>
                 <div style="flex: 1.5; min-width: 250px;"></div> <!-- Spacer -->
             </div>
-
+ 
             <p class="module-desc" style="max-width: 800px; margin-top: 1rem;">
                 Las entidades operativas acceden al módulo de Rutas a través de una interfaz, sin conectividad API por seguridad. El Ministerio de Salud, como agente regulador, necesita acceso a la base de datos, pero su mecanismo técnico aún no está definido.
             </p>
         </div>
     </section>
-
+ 
     <!-- 04_Salvia -->
     <section>
         <div class="section-header">
             <h2 style="margin:0; font-size: 1.5rem;">Hoja de ruta realista: qué va primero y por qué</h2>
             <span style="font-size: 0.85rem; color: var(--text-muted);">tres horizontes priorizados, no un backlog en paralelo</span>
         </div>
-
+ 
         <div class="roadmap-grid">
             <div class="roadmap-card rm-red">
                 <div class="rm-header"><span class="horizon-num">1</span>RUTAS PRIMERO</div>
-                <div class="rm-date">2–20 de septiembre, aprox.</div>
+                <div class="rm-date">2–13 de septiembre, aprox.</div>
                 <div class="rm-why">Es la pieza de la que dependen las demás: sin Rutas cerrado, el portal de entidades, el escalamiento de barreras y el enrutamiento de LGBTIQ+ y de los dos módulos nuevos no tienen dónde apoyarse.</div>
-
+ 
                 <div class="rm-task">
                     Sacar el motor de enrutamiento diferencial y el semáforo sectorial de mockup a desarrollo real.
                     <span class="rm-task-meta">207 h · Bolsa 2</span>
@@ -1066,12 +1176,12 @@
                     <span class="rm-task-meta">PSWYA-624</span>
                 </div>
             </div>
-
+ 
             <div class="roadmap-card rm-yellow">
                 <div class="rm-header"><span class="horizon-num">2</span>REPORTES Y REGISTROS QUE SE CONECTAN A LO YA CONSTRUIDO</div>
-                <div class="rm-date">aprox. 3ª semana de sep. a 2ª de oct.</div>
+                <div class="rm-date">14 de septiembre a 4 de octubre, aprox.</div>
                 <div class="rm-why">Huérfanos y Masculinidades no se construyen desde cero: se apoyan en Registro, Barreras, Notificaciones y Medidas de Emergencia que ya operan. Priorizarlos aquí, después de Rutas, es lo que hace posible esa reutilización.</div>
-
+ 
                 <div class="rm-task">
                     Cerrar los campos de los formularios de reporte y registro de Familiares/Huérfanos y de Masculinidades.
                     <span class="rm-task-meta">PSWYA-628 · PSWYA-629 · en levantamiento, Sprint 13</span>
@@ -1090,12 +1200,12 @@
                 </div>
                 <div class="rm-task">Completar la estabilización de Atención Psicosocial (2ª iteración de QA en curso) y cerrar Tamizaje y Medidas de Emergencia.</div>
             </div>
-
+ 
             <div class="roadmap-card rm-blue">
                 <div class="rm-header"><span class="horizon-num">3</span>LO QUE SE DEJA PARA EL TRAMO FINAL</div>
-                <div class="rm-date">aprox. 3ª semana de oct. a 26-oct, y después</div>
-                <div class="rm-why">No porque no importe, sino porque el sistema puede operar sin esto listo el día del cierre — y forzarlo ahora pondría en riesgo lo de los Horizontes 1 y 2.</div>
-
+                <div class="rm-date">13–26 de octubre (margen contractual) y después</div>
+                <div class="rm-why">No porque no importe, sino porque el sistema puede operar sin esto listo el 12 de octubre — y forzarlo ahora pondría en riesgo el objetivo de los Bloques 1 a 4. Lo que sigue cae en el margen contractual hasta el 26 de octubre, o después del cierre.</div>
+ 
                 <div class="rm-task">Completar LGBTIQ+ y Masculinidades como módulos plenos, más allá de sus campos de formulario.</div>
                 <div class="rm-task">Cerrar el módulo de Familiares/Huérfanos como flujo completo (más allá de la definición de campos).</div>
                 <div class="rm-task">Integrar el desarrollo web y la bitácora de caso de la App MASP, y verificar su registro en App Store Connect (iOS).</div>
@@ -1112,9 +1222,115 @@
             </div>
         </div>
     </section>
-
+ 
     <hr>
-
+ 
+    <!-- 04c_Salvia_gantt -->
+    <section>
+        <div class="section-header">
+            <h2 style="margin:0; font-size: 1.5rem;">Cronograma de ejecución: bloques por fase y por desarrollador</h2>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">objetivo interno 12-oct · margen contractual hasta 26-oct</span>
+        </div>
+ 
+        <p class="module-desc" style="max-width: 900px; margin-bottom: 1.5rem;">
+            Para sostener una fecha objetivo de entrega el <strong>12 de octubre</strong> —dejando el 13 al 26 de octubre como margen contractual para revisiones finales, ajustes menores y entrega formal de documentación, dentro del plazo del 26 de octubre que sigue vigente en el contrato— el equipo tradujo los tres horizontes de la hoja de ruta anterior en un cronograma de ejecución por desarrollador. Es la misma priorización (Rutas primero, luego lo que se conecta a lo ya construido, y al final lo que el sistema puede operar sin tener cerrado), ahora con bloques de fecha y responsable técnico.
+        </p>
+ 
+        <div class="confirm-note">
+            <strong>Referencias normativas — verificadas.</strong> La Ley 2530 de 2025 y la Resolución 860 de 2024 son normas reales y vigentes, confirmadas contra fuentes oficiales (Función Pública, Secretaría del Senado, Alcaldía de Bogotá y el propio Ministerio de Igualdad y Equidad):
+            <ul>
+                <li><strong>Ley 2530 de 2025</strong> — protege integralmente a niños, niñas, adolescentes y jóvenes hasta los 25 años que hayan quedado en orfandad por un feminicidio; en su Artículo 13 crea un <em>Registro Nacional</em> de estos NNA y jóvenes a cargo de la Fiscalía General de la Nación. Esto respalda directamente el nombre que este panorama ya usa para el frente de Familiares — "Familiares y Registro Nacional de Huérfanos" — y valida la lógica de tres categorías por edad (NNA, jóvenes 18-25, adultos) que propone el cronograma de ejecución.</li>
+                <li><strong>Resolución 860 de 2024</strong> (Ministerio de Igualdad y Equidad) — establece medidas de emergencia no solo para mujeres en riesgo de feminicidio, sino explícitamente para "familias y personas dependientes de víctimas de feminicidio" (hijos/as, padres, madres, hermanos/as). Esto confirma, con una fuente normativa directa, la misma conexión que ya señalamos en la sección de los cinco módulos contractuales: Familiares se apoya en Medidas de emergencia porque la propia Resolución 860 así lo define.</li>
+            </ul>
+        </div>
+ 
+        <div class="eval-box">
+            <strong>Evaluación antes de tomar este cronograma como compromiso frente a la Dirección:</strong>
+            <ul>
+                <li><strong>Profundidad técnica frente al estado real</strong> — el plan asume integraciones profundas con Fiscalía e ICBF, cifrado reforzado de datos de menores, pruebas de carga a gran escala y migración de bases históricas, todo dentro de las próximas seis semanas. Es más ambicioso que el estado que reporta el Sprint 13, donde Rutas apenas entra a su primera iteración de QA y los dos módulos nuevos siguen en definición de campos. Cada líder de frente debería confirmar que su bloque es alcanzable antes de fijarlo como fecha de compromiso.</li>
+                <li><strong>Cinco desarrolladores full-stack dedicados</strong> — el cronograma asume un frente por desarrollador (backend, UX, interoperabilidad, datos, QA/DevOps) trabajando en paralelo desde el 31 de agosto. Vale la pena confirmar que esa es la asignación real del equipo antes de presentarlo como plan de ejecución.</li>
+            </ul>
+        </div>
+ 
+        <div class="exec-timeline">
+            <div class="exec-block eb1">
+                <div class="eb-title">Bloque 1 — Núcleo y Rutas</div>
+                <div class="eb-date">31 ago – 13 sep</div>
+            </div>
+            <div class="exec-block eb2">
+                <div class="eb-title">Bloque 2 — Módulos especializados</div>
+                <div class="eb-date">14 – 27 sep</div>
+            </div>
+            <div class="exec-block eb3">
+                <div class="eb-title">Bloque 3 — Interoperabilidad</div>
+                <div class="eb-date">28 sep – 4 oct</div>
+            </div>
+            <div class="exec-block eb4">
+                <div class="eb-title">Bloque 4 — QA y despliegue</div>
+                <div class="eb-date">5 – 12 oct</div>
+            </div>
+        </div>
+        <p class="exec-caption">Los rangos exactos por desarrollador varían por uno o dos días dentro de cada bloque en el plan original; aquí se agrupan sobre esta cadencia común para facilitar la lectura.</p>
+ 
+        <div class="dev-table-wrap">
+            <table class="dev-table">
+                <thead>
+                    <tr>
+                        <th>Frente</th>
+                        <th>Bloque 1<span>31 ago – 13 sep</span></th>
+                        <th>Bloque 2<span>14 – 27 sep</span></th>
+                        <th>Bloque 3<span>28 sep – 4 oct</span></th>
+                        <th>Bloque 4<span>5 – 12 oct</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Backend y reglas de negocio</td>
+                        <td>Cierre del motor de escalamiento y de los flujos de aprobación para Medidas de Emergencia.</td>
+                        <td>Lógica para registrar múltiples integrantes de un mismo núcleo familiar en Familiares/Huérfanos.</td>
+                        <td>Validación automática para evitar que una misma familia reciba medidas de emergencia duplicadas por distintos canales.</td>
+                        <td>Pruebas de integración con los servicios de Fiscalía/ICBF y cierre del backend.</td>
+                    </tr>
+                    <tr>
+                        <td>Experiencia de usuario e interfaces</td>
+                        <td>Interfaz de gestión de barreras y visualización de expedientes.</td>
+                        <td>Formulario de caracterización de riesgo de feminicidio, con validaciones que se ajustan según las respuestas.</td>
+                        <td>Tableros de Medidas de Emergencia y seguimiento de entregas a aliados (p. ej. Cruz Roja).</td>
+                        <td>Ajustes de accesibilidad y afinamiento de interfaz para el paso a producción.</td>
+                    </tr>
+                    <tr>
+                        <td>Interoperabilidad y seguridad de datos</td>
+                        <td>Cifrado reforzado de campos sensibles y auditoría inmutable de accesos.</td>
+                        <td colspan="2">Integración con los sistemas de Fiscalía e ICBF para el seguimiento de casos de familiares y huérfanos.</td>
+                        <td>Pruebas de seguridad y aseguramiento de la reserva de información antes del despliegue.</td>
+                    </tr>
+                    <tr>
+                        <td>Datos y reportes</td>
+                        <td>Estructuración del expediente único que soporta captura progresiva de información.</td>
+                        <td colspan="2">Motor de reportes masivos y exportación de información para entes de control.</td>
+                        <td>Migración y depuración de bases históricas al nuevo entorno de SALVIA.</td>
+                    </tr>
+                    <tr>
+                        <td>Calidad, operación y despliegue</td>
+                        <td colspan="2">Pruebas de usabilidad en campo con agentes de Familiares.</td>
+                        <td>Pruebas de carga con datos simulados a gran escala, en ambiente controlado.</td>
+                        <td>Despliegue a producción y activación del plan de soporte posterior al lanzamiento.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+ 
+        <ul class="gantt-hitos">
+            <li class="gantt-hito"><strong>13-sep</strong> — cierre del Bloque 1: Rutas y escalamiento de barreras en ambiente de pruebas.</li>
+            <li class="gantt-hito"><strong>27-sep</strong> — integración completa de los formularios de Familiares/Huérfanos y de Medidas de Emergencia.</li>
+            <li class="gantt-hito"><strong>4-oct</strong> — cierre de la interoperabilidad con entidades externas (Fiscalía/ICBF).</li>
+            <li class="gantt-hito final"><strong>12-oct</strong> — objetivo interno de entrega: sistema SALVIA operativo con el ciclo completo Reporte → Caracterización → Medidas → Seguimiento → Cierre.</li>
+            <li class="gantt-hito"><strong>13 al 26-oct</strong> — margen contractual: revisiones finales, ajustes menores y entrega formal de documentación, dentro del límite del 26 de octubre.</li>
+        </ul>
+    </section>
+ 
+    <hr>
+ 
     <!-- 04b_Salvia_ops -->
     <section>
         <div class="section-header">
@@ -1163,15 +1379,15 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 05_Salvia -->
     <footer class="footer">
-        <h2>El sistema ya protege — lo que falta es entregarlo en el orden correcto para las ocho semanas que quedan.</h2>
-        <p>Basado en el Plan de Trabajo del Proyecto Evolutivo SALVIA V1 (27-mar-2026), el Informe Técnico Ejecutivo v4, el Guion Funcional de Rutas/Barreras/Enlaces/Entidades/Mecanismo Articulador, la bitácora de horas (salvia_julio.xlsx) y los Sprints 5 a 13 de Jira. Corte: 2-sep-2026.</p>
+        <h2>El sistema ya protege — lo que falta es entregarlo en el orden correcto para las seis semanas que quedan hasta el objetivo del 12 de octubre.</h2>
+        <p>Basado en el Plan de Trabajo del Proyecto Evolutivo SALVIA V1 (27-mar-2026), el Informe Técnico Ejecutivo v4, el Guion Funcional de Rutas/Barreras/Enlaces/Entidades/Mecanismo Articulador, la bitácora de horas (salvia_julio.xlsx), el cronograma de ejecución por desarrollador (Gantt por Fases), la Ley 2530 de 2025 y la Resolución 860 de 2024 del Ministerio de Igualdad y Equidad, y los Sprints 5 a 13 de Jira. Corte: 2-sep-2026.</p>
     </footer>
-
+ 
 </div>
-
+ 
 <!-- Script para animar las barras de progreso al cargar -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -1184,6 +1400,6 @@
         }, 300); // Pequeño retraso para que la animación sea visible
     });
 </script>
-
+ 
 </body>
 </html>
